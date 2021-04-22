@@ -10,10 +10,15 @@ img {
     display: block;
 }
 
+ul {
+    list-style-type: none;
+}
+
 /* COMMON */
 body {
-    min-width: 768px;
+    min-width: 950px;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 15px;
 }
 
 .wrapper {
@@ -23,6 +28,12 @@ body {
     background: #009587;
     background: linear-gradient(180deg, rgba(0,149,135,1) 20%, rgba(213,218,216,1) 20%);
 }
+
+/* .clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+} */
 
 /* APP */
 .app-container {
@@ -36,7 +47,10 @@ body {
     display: flex;
 }
 
-/* CONTACT LIST */
+/* SIDEBAR: CONTACT LIST */
+/* UPPER CONTACT BAR */
+/* L'Upper Contact Bar è stato inserito nella sezione di sinistra, ma vale
+   anche per quella di destra, lo stile è lo stesso */
 .left {
     width: 35%;
 }
@@ -60,7 +74,6 @@ body {
 
 .contact-box {
     width: 45px;
-    display: inline-block;
 }
 
 .contact-box img {
@@ -81,14 +94,16 @@ body {
     margin-right: 15px;
 }
 
-.icon-box {
-    display: inline-block;
-}
-
 .icon-box i {
     color: #b1b1b1;
     font-size: 20px;
     cursor: pointer;
+}
+/* END UPPER CONTACT BAR */
+
+/* TOOLS AND CONTACT */
+.tools-and-contacts-container {
+    height: calc(100% - 186px);
 }
 
 /* Notification options */
@@ -118,8 +133,8 @@ body {
     margin-left: 10px;
 }
 
-.notification-switch a {
-    font-size: 14px;
+.small-text {
+    font-size: 13px;
     color: #4f7585;
 }
 
@@ -158,8 +173,115 @@ body {
     color: #b1b1b1;
 }
 
+/* Contact List */
+.contact-list {
+    background-color: white;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.contact-list .contact-info {
+    padding: 15px;
+    border-bottom: 1px solid #b1b1b1;
+}
+
+.contact-list .contact-info:last-child {
+    border-bottom: 0;
+    padding-bottom: 25px;
+}
+
+.contact-list .contact-box {
+    width: 60px;
+}
+
+.contact-list .contact-name {
+    margin-left: 20px;
+    align-self: flex-start;
+}
+
 /* CHAT */
 .right {
     width: 65%;
 }
 
+/* Upper Contact Bar */
+.contact-name-and-access {
+    margin-left: 10px;
+}
+
+.right .contact-name {
+    margin-left: 0;
+    margin-bottom: 2px;
+}
+
+/* Main: Chat Section */
+main {
+    height: calc(100% - 128px);
+    background-image: url('../img/mine.jpg');
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.messages-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.messages-ul {
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+    display: flex;
+	flex-direction: column;
+}
+
+.message {
+    padding: 15px 12.5px;
+    width: 40%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    font-weight: 400;
+}
+
+.message.sent {
+    /* position: relative;
+    left: 50%; */
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+
+.message.received {
+    /* float: left; */
+    background-color: white;
+}
+/* End Main: Chat Section */
+
+/* Footer: Send Message */
+.send-message-container {
+    /* display: flex;
+    align-items: center; */
+    text-align: center;
+
+    background-color: #eaeaea;
+    padding: 10px;
+}
+
+.send-message-container input {
+    width: 80%;
+    padding: 12.5px;
+
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+}
+
+.send-message-icon i {
+    font-size: 20px;
+    color: #6a7376;
+    cursor: pointer;
+}
+/* End Footer: Send Message */
+
+/* Ricordati clearfix commentato in cima */

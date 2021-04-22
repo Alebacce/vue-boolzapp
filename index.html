@@ -25,111 +25,172 @@
     <div id="root" class="wrapper">
         <!-- App Container -->
         <div class="app-container">
+            <!-- LEFT: SIDEBAR -->
             <!-- Contact List -->
             <div class="left">
-                <!-- HEADER -->
-                <header>
-                    <!-- Upper Contact Bar -->
-                    <div class="contact-bar">
-                        <!-- Contact Info -->
-                        <div class="contact-info">
-                            <div class="contact-box">
-                                <img src="img/avatar_io.jpg" alt="Avatar of myself">
-                            </div>
-                            <span class="contact-name">Kassandra</span>
+                <!-- Upper Contact Bar -->
+                <div class="contact-bar">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="contact-box">
+                            <img src="img/avatar_io.jpg" alt="Avatar of myself">
                         </div>
-                
-                        <!-- Triad of app icons -->
-                        <div class="triad-app-icons">
-                            <!-- Icon -->
-                            <div class="icon-box">
-                                <i class="fas fa-circle-notch"></i>
-                            </div>
-                            
-                            <!-- Icon -->
-                            <div class="icon-box">
-                                <i class="fas fa-comment-alt"></i>
-                            </div>
+                        <span class="contact-name">Kassandra</span>
+                    </div>
+            
+                    <!-- Triad of app icons -->
+                    <div class="triad-app-icons">
+                        <!-- Icon -->
+                        <div class="icon-box">
+                            <i class="fas fa-circle-notch"></i>
+                        </div>
+                        
+                        <!-- Icon -->
+                        <div class="icon-box">
+                            <i class="fas fa-comment-alt"></i>
+                        </div>
 
-                            <!-- Icon -->
-                            <div class="icon-box">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </div>
+                        <!-- Icon -->
+                        <div class="icon-box">
+                            <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
-                </header>
-                <!-- END HEADER -->
+                </div>
+                <!-- End Upper Contact Bar -->
 
-                <!-- MAIN -->
-                <main>
+                <!-- Tools and contact -->
+                <div class="tools-and-contacts-container">
                     <!-- Notificazion Options -->
-                    <section class="notification-options">
+                    <div class="notification-options">
                         <div class="notification-icon">
                             <i class="fas fa-bell-slash"></i>
                         </div>
                         <div class="notification-switch">
                             <div>Ricevi notifiche di nuovi messaggi</div>
                             <div>
-                                <a href="#">
+                                <a class="small-text" href="#">
                                     Attiva notifiche desktop
                                 </a>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
                     <!-- Searchbar -->
-                    <section class="searchbar-section">
+                    <div class="searchbar-section">
                         <div class="searchbar-container">
                             <div class="searchbar-icon">
                                 <i class="fas fa-search"></i>
                             </div>
                             <input type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
-                    </section>
+                    </div>
 
                     <!-- Contacts -->
-                    <section class="contact-list">
-                        
-                    </section>
-                </main>
-                <!-- END MAIN -->
-            </div>
-                
-            <!-- Chat -->
-            <div class="right">
-                <!-- HEADER -->
-                <header>
-                    <!-- Upper Contact Bar -->
-                    <div class="contact-bar">
-                        <!-- Contact Info -->
+                    <div class="contact-list">
+
+                        <!-- Single Contact Info -->
                         <div class="contact-info">
                             <div class="contact-box">
                                 <img src="img/avatar_io.jpg" alt="Avatar of myself">
                             </div>
                             <span class="contact-name">Kassandra</span>
                         </div>
-                
-                        <!-- Triad of app icons -->
-                        <div class="triad-app-icons">
-                            <!-- Icon -->
-                            <div class="icon-box">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            
-                            <!-- Icon -->
-                            <div class="icon-box">
-                                <i class="fas fa-paperclip"></i>
-                            </div>
-                            
-                            <!-- Icon -->
-                            <div class="icon-box">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </div>
+                        <!-- End Single Contact Info -->
+
+                    </div>
+                    <!-- End Contacts -->
+                </div>
+            </div>
+            <!-- END LEFT: SIDEBAR -->
+            
+            
+            <!-- RIGHT: CHAT -->
+            <div class="right">
+                <!-- Upper Contact Bar -->
+                <div class="contact-bar">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="contact-box">
+                            <img src="img/avatar_io.jpg" alt="Avatar of myself">
+                        </div>
+                        <div class="contact-name-and-access">
+                            <div class="contact-name">Kassandra</div>
+                            <div class=" small-text">Ultimo accesso oggi alle</div>
                         </div>
                     </div>
-                </header>
-                <!-- END HEADER -->
+            
+                    <!-- Triad of app icons -->
+                    <div class="triad-app-icons">
+                        <!-- Icon -->
+                        <div class="icon-box">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        
+                        <!-- Icon -->
+                        <div class="icon-box">
+                            <i class="fas fa-paperclip"></i>
+                        </div>
+                        
+                        <!-- Icon -->
+                        <div class="icon-box">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Upper Contact Bar -->
+
+                <!-- Main: Chat Section -->
+                <main>
+                    <div class="messages-container">
+                        <ul class="messages-ul">
+                            <li class="message received">La Marianna va in campagna</li>
+                            <li class="message sent">Ahahahahahahah</li>
+                            
+                            <li class="message sent">Ahahahahahahah</li><li class="message received">Fa morire sta cosa ahahahahah</li>
+                            <li class="message received">Fa morire sta cosa ahahahahah
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas neque ex voluptatem, dignissimos dolorum molestias molestiae rerum tempora porro quam enim eum! Amet aliquam ducimus culpa ut sequi, maxime accusantium!
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquid corporis soluta? Possimus officiis atque dolor labore tempora eligendi architecto ab. Placeat qui architecto commodi sequi ipsum repudiandae at aliquid.
+                            </li>
+                            <li class="message sent">Fa morire sta cosa ahahahahah
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas neque ex voluptatem, dignissimos dolorum molestias
+                                molestiae rerum tempora porro quam enim eum! Amet aliquam ducimus culpa ut sequi, maxime accusantium!
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquid corporis soluta? Possimus officiis atque dolor
+                                labore tempora eligendi architecto ab. Placeat qui architecto commodi sequi ipsum repudiandae at aliquid.
+                            </li>
+
+                            <li class="message sent">Fa morire sta cosa ahahahahah
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa debitis, aliquam eaque voluptate eos ad quos voluptatum esse. Officiis voluptatibus assumenda eum ut ducimus, fuga voluptates distinctio aspernatur neque labore?
+                            </li>
+                            
+                            <li class="message received">Fa morire sta cosa ahahahahah
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas neque ex voluptatem, dignissimos dolorum molestias
+                                molestiae rerum tempora porro quam enim eum! Amet aliquam ducimus culpa ut sequi, maxime accusantium!
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquid corporis soluta? Possimus officiis atque dolor
+                                labore tempora eligendi architecto ab. Placeat qui architecto commodi sequi ipsum repudiandae at aliquid.
+                            </li>
+                        </ul>
+                    </div>
+                </main>
+                <!-- End Main: Chat Section -->
+
+                <!-- Send Message section -->
+                <footer>
+                    <div class="send-message-container">
+                        <!-- <div class="send-message-icon">
+                            <i class="far fa-smile"></i>
+                        </div> -->
+
+                        <input type="text" placeholder="Scrivi un messaggio">
+
+                        <!-- <div class="send-message-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div> -->
+                    </div>
+                </footer>
+                <!-- End Send Message section -->
+                
             </div>
+            <!-- END RIGHT: CHAT -->
         </div>
     </div>
 
