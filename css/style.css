@@ -1,0 +1,98 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* COMMON */
+body {
+    min-width: 768px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: #009587;
+    background: linear-gradient(180deg, rgba(0,149,135,1) 20%, rgba(213,218,216,1) 20%);
+}
+
+/* APP */
+.app-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    min-width: 80%;
+
+    display: flex;
+}
+
+/* CONTACT LIST */
+.left {
+    width: 35%;
+}
+
+.contact-bar {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: #eaeaea;
+    padding: 10px;
+}
+
+.left .contact-bar {
+    border-right: 1px solid #b1b1b1
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.contact-box {
+    width: 45px;
+    display: inline-block;
+}
+
+.contact-box img {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.contact-name {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.triad-app-icons {
+    width:  90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.icon-box {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.icon-box i {
+    color: #b1b1b1;
+    cursor: pointer;
+}
+
+/* Chat */
+.right {
+    width: 65%;
+}
+
