@@ -29,12 +29,6 @@ body {
     background: linear-gradient(180deg, rgba(0,149,135,1) 20%, rgba(213,218,216,1) 20%);
 }
 
-/* .clearfix::after {
-    content: '';
-    display: table;
-    clear: both;
-} */
-
 /* APP */
 .app-container {
     position: absolute;
@@ -222,7 +216,7 @@ main {
     overflow-x: hidden;
 }
 
-.messages-container {
+.main-container {
     width: 80%;
     margin: 0 auto;
 }
@@ -245,31 +239,29 @@ main {
 }
 
 .message.sent {
-    /* position: relative;
-    left: 50%; */
     background-color: #d5f9ba;
     align-self: flex-end;
 }
 
 .message.received {
-    /* float: left; */
     background-color: white;
 }
 /* End Main: Chat Section */
 
 /* Footer: Send Message */
 .send-message-container {
-    /* display: flex;
-    align-items: center; */
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
     background-color: #eaeaea;
     padding: 10px;
 }
 
-.send-message-container input {
-    width: 80%;
+input {
+    width: 83%;
     padding: 12.5px;
+    padding-right: 0;
 
     border-radius: 5px;
     border-width: 1px;
@@ -283,5 +275,3 @@ main {
     cursor: pointer;
 }
 /* End Footer: Send Message */
-
-/* Ricordati clearfix commentato in cima */

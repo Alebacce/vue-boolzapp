@@ -87,15 +87,19 @@
 
                     <!-- Contacts -->
                     <div class="contact-list">
+                        <ul>
+                            <!-- Single Contact Info -->
+                            <li v-for="(contact, index) in contacts">
+                                <div class="contact-info">
+                                    <div class="contact-box">
+                                        <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="Avatar of contact">
+                                    </div>
+                                    <span class="contact-name">{{ contacts[index].name }}</span>
+                                </div>
+                            </li>
+                            <!-- End Single Contact Info -->
 
-                        <!-- Single Contact Info -->
-                        <div class="contact-info">
-                            <div class="contact-box">
-                                <img src="img/avatar_io.jpg" alt="Avatar of myself">
-                            </div>
-                            <span class="contact-name">Kassandra</span>
-                        </div>
-                        <!-- End Single Contact Info -->
+                        </ul>
 
                     </div>
                     <!-- End Contacts -->
@@ -141,53 +145,32 @@
 
                 <!-- Main: Chat Section -->
                 <main>
-                    <div class="messages-container">
+                    <div class="main-container">
                         <ul class="messages-ul">
-                            <li class="message received">La Marianna va in campagna</li>
-                            <li class="message sent">Ahahahahahahah</li>
-                            
-                            <li class="message sent">Ahahahahahahah</li><li class="message received">Fa morire sta cosa ahahahahah</li>
-                            <li class="message received">Fa morire sta cosa ahahahahah
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas neque ex voluptatem, dignissimos dolorum molestias molestiae rerum tempora porro quam enim eum! Amet aliquam ducimus culpa ut sequi, maxime accusantium!
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquid corporis soluta? Possimus officiis atque dolor labore tempora eligendi architecto ab. Placeat qui architecto commodi sequi ipsum repudiandae at aliquid.
-                            </li>
-                            <li class="message sent">Fa morire sta cosa ahahahahah
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas neque ex voluptatem, dignissimos dolorum molestias
-                                molestiae rerum tempora porro quam enim eum! Amet aliquam ducimus culpa ut sequi, maxime accusantium!
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquid corporis soluta? Possimus officiis atque dolor
-                                labore tempora eligendi architecto ab. Placeat qui architecto commodi sequi ipsum repudiandae at aliquid.
-                            </li>
-
-                            <li class="message sent">Fa morire sta cosa ahahahahah
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa debitis, aliquam eaque voluptate eos ad quos voluptatum esse. Officiis voluptatibus assumenda eum ut ducimus, fuga voluptates distinctio aspernatur neque labore?
-                            </li>
-                            
-                            <li class="message received">Fa morire sta cosa ahahahahah
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas neque ex voluptatem, dignissimos dolorum molestias
-                                molestiae rerum tempora porro quam enim eum! Amet aliquam ducimus culpa ut sequi, maxime accusantium!
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquid corporis soluta? Possimus officiis atque dolor
-                                labore tempora eligendi architecto ab. Placeat qui architecto commodi sequi ipsum repudiandae at aliquid.
-                            </li>
+                            <li v-for="(message, index) in contacts.messages" class="message">{{ contacts[index].messages[index].text }}</li>
                         </ul>
                     </div>
                 </main>
                 <!-- End Main: Chat Section -->
 
-                <!-- Send Message section -->
+                <!-- FOOTER -->
                 <footer>
+                    <!-- Send Message section -->
                     <div class="send-message-container">
-                        <!-- <div class="send-message-icon">
+                        <!-- Icon -->
+                        <div class="send-message-icon">
                             <i class="far fa-smile"></i>
-                        </div> -->
-
+                        </div>
+                        <!-- Input Send Message -->
                         <input type="text" placeholder="Scrivi un messaggio">
-
-                        <!-- <div class="send-message-icon">
+                        <!-- Icon -->
+                        <div class="send-message-icon">
                             <i class="fas fa-microphone"></i>
-                        </div> -->
+                        </div>
                     </div>
+                    <!-- End Send Message section -->
                 </footer>
-                <!-- End Send Message section -->
+                <!-- END FOOTER -->
                 
             </div>
             <!-- END RIGHT: CHAT -->
