@@ -83,15 +83,82 @@ body {
 
 .icon-box {
     display: inline-block;
-    font-size: 20px;
 }
 
 .icon-box i {
     color: #b1b1b1;
+    font-size: 20px;
     cursor: pointer;
 }
 
-/* Chat */
+/* Notification options */
+.notification-options {
+    display: flex;
+    align-items: center;
+
+    padding: 15px;
+    background-color: #8edafb;
+}
+.notification-icon {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+
+    background-color: white;
+}
+
+.notification-icon i {
+    font-size: 18px;
+    color: #8edafb;
+}
+
+.notification-switch {
+    margin-left: 10px;
+}
+
+.notification-switch a {
+    font-size: 14px;
+    color: #4f7585;
+}
+
+/* Searchbar */
+.searchbar-section {
+    padding: 7px;
+    background-color: #eaeaea;
+}
+
+.searchbar-container {
+    margin: 0 auto;
+    position: relative;
+}
+
+.searchbar-container input {
+    width: 100%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 70px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+
+    color: #4f7585;
+}
+
+.searchbar-icon {
+    position: absolute;
+    left: 23px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.searchbar-icon i {
+    color: #b1b1b1;
+}
+
+/* CHAT */
 .right {
     width: 65%;
 }
