@@ -14,6 +14,7 @@
 var app = new Vue ({
     el: '#root',
     data: {
+        selectedContactIndex : 0,
         contacts: [
 	{
 		name: 'Michele',
@@ -103,7 +104,14 @@ var app = new Vue ({
     },
 
     methods: {
+        showChat(index) {
+            this.selectedContactIndex = index;
+            console.log(this.selectedContactIndex);
+        },
         
+        sendMessage() {
+
+        }
     }
 
 });

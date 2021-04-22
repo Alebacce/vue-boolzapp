@@ -89,13 +89,11 @@
                     <div class="contact-list">
                         <ul>
                             <!-- Single Contact Info -->
-                            <li v-for="(contact, index) in contacts">
-                                <div class="contact-info">
+                            <li v-for="(contact, index) in contacts" @click="showChat(index)" class="contact-info">
                                     <div class="contact-box">
-                                        <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="Avatar of contact">
+                                        <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="contact.name">
                                     </div>
                                     <span class="contact-name">{{ contacts[index].name }}</span>
-                                </div>
                             </li>
                             <!-- End Single Contact Info -->
 
@@ -115,10 +113,10 @@
                     <!-- Contact Info -->
                     <div class="contact-info">
                         <div class="contact-box">
-                            <img src="img/avatar_io.jpg" alt="Avatar of myself">
+                            <img :src="'img/avatar' + contacts[selectedContactIndex].avatar + '.jpg'" :alt="contacts[selectedContactIndex].name">
                         </div>
                         <div class="contact-name-and-access">
-                            <div class="contact-name">Kassandra</div>
+                            <div class="contact-name">{{ contacts[selectedContactIndex].name }}</div>
                             <div class=" small-text">Ultimo accesso oggi alle</div>
                         </div>
                     </div>
@@ -147,7 +145,18 @@
                 <main>
                     <div class="main-container">
                         <ul class="messages-ul">
-                            <li v-for="(message, index) in contacts.messages" class="message">{{ contacts[index].messages[index].text }}</li>
+                            <!-- Sto iterando messages, index si riferisce all'index del messaggio. Per far capire
+                            a quale contacts ci stiamo riferendo dobbiamo invece specificarlo noi con un altra variabile.
+                            Essendo che quindi sto iterando i messaggi, mi basta postare messagge.text e lui mi creerà un
+                            <li> per ogni messaggio. Con la classe interattiva si dedcide se è iviato o ricevuto-->
+                            <li v-for="(message, index) in contacts[selectedContactIndex].messages" class="message" :class="message.status">
+                                <div>
+                                    {{ message.text }}
+                                </div>
+                                <div class="date">
+                                    {{ message.date }}
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </main>
@@ -162,7 +171,7 @@
                             <i class="far fa-smile"></i>
                         </div>
                         <!-- Input Send Message -->
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input @keyup.enter="sendMessage" type="text" placeholder="Scrivi un messaggio">
                         <!-- Icon -->
                         <div class="send-message-icon">
                             <i class="fas fa-microphone"></i>

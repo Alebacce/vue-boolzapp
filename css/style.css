@@ -176,7 +176,7 @@ body {
 
 .contact-list .contact-info {
     padding: 15px;
-    border-bottom: 1px solid #b1b1b1;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .contact-list .contact-info:last-child {
@@ -230,7 +230,10 @@ main {
 }
 
 .message {
-    padding: 15px 12.5px;
+    padding-top: 15px;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-bottom: 5px;
     width: 40%;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -245,6 +248,13 @@ main {
 
 .message.received {
     background-color: white;
+}
+
+.message .date {
+    font-size: 10px;
+    text-align: right;
+    color: #b1b1b1;
+    margin-top: 3px;
 }
 /* End Main: Chat Section */
 
