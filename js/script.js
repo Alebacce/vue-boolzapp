@@ -46,19 +46,28 @@ var app = new Vue ({
 		visible: true,
 		messages: [
 			{
-				date: '10/01/2020 15:30:55',
+				date: '25/03/21 14:13',
 				text: 'Hai portato a spasso il cane?',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
 			},
 			{
-				date: '10/01/2020 15:50:00',
+				date: '25/03/21 14:50',
 				text: 'Ricordati di dargli da mangiare',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
 			},
 			{
-				date: '10/01/2020 16:15:22',
+				date: '25/03/21 16:15',
 				text: 'Tutto fatto!',
-				status: 'received'
+				status: 'received',
+				isRead: true
+			},
+			{
+				date: '25/03/21 16:27',
+				text: 'Grandissimo!',
+				status: 'sent',
+				isRead: true
 			}
 		],
 	},
@@ -68,19 +77,28 @@ var app = new Vue ({
 		visible: true,
 		messages: [
 			{
-				date: '20/03/2020 16:30:00',
+				date: '20/03/21 16:28',
 				text: 'Ciao come stai?',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
 			},
 			{
-				date: '20/03/2020 16:30:55',
+				date: '20/03/21 16:31',
 				text: 'Bene grazie! Stasera ci vediamo?',
-				status: 'received'
+				status: 'received',
+				isRead: true
 			},
 			{
-				date: '20/03/2020 16:35:00',
+				date: '20/03/21 16:35',
 				text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
+			},
+			{
+				date: '20/03/21 16:37',
+				text: 'Mi dispiace Fabio...',
+				status: 'sent',
+				isRead: false
 			}
 		],
 	},
@@ -90,19 +108,22 @@ var app = new Vue ({
 		visible: true,
 		messages: [
 			{
-				date: '28/03/2020 10:10:40',
+				date: '19/03/21 10:12',
 				text: 'La Marianna va in campagna',
-				status: 'received'
+				status: 'received',
+				isRead: true
 			},
 			{
-				date: '28/03/2020 10:20:10',
+				date: '19/03/21 10:20',
 				text: 'Sicuro di non aver sbagliato chat?',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
 			},
 			{
-				date: '28/03/2020 16:15:22',
+				date: '19/03/21 16:17',
 				text: 'Ah scusa!',
-				status: 'received'
+				status: 'received',
+				isRead: true
 			}
 		],
 	},
@@ -112,14 +133,23 @@ var app = new Vue ({
 		visible: true,
 		messages: [
 			{
-				date: '10/01/2020 15:30:55',
+				date: '19/03/21 15:34',
 				text: 'Lo sai che ha aperto una nuova pizzeria?',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
 			},
 			{
-				date: '10/01/2020 15:50:00',
+				date: '19/03/21 15:53',
 				text: 'Si, ma preferirei andare al cinema',
-				status: 'received'
+				status: 'received',
+				isRead: true
+			}
+			,
+			{
+				date: '19/03/21 16:22',
+				text: 'Ma Lu c\'è la pandemia...',
+				status: 'sent',
+				isRead: true
 			}
 		],
 	},
@@ -129,14 +159,16 @@ var app = new Vue ({
 		visible: true,
 		messages: [
 			{
-				date: '10/01/2020 15:30:55',
+				date: '18/03/21 22:44',
 				text: 'So Lillo',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
 			},
 			{
-				date: '10/01/2020 15:50:00',
+				date: '18/03/21 23:06',
 				text: 'Noooooooooooo',
-				status: 'received'
+				status: 'received',
+				isRead: true
 			}
 		],
 	},
@@ -146,19 +178,22 @@ var app = new Vue ({
 		visible: true,
 		messages: [
 			{
-				date: '10/01/2020 15:30:55',
+				date: '18/03/21 17:14',
 				text: 'Hai comprato le medicine',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
 			},
 			{
-				date: '10/01/2020 15:50:00',
+				date: '18/03/21 17:45',
 				text: 'Tutte quante',
-				status: 'received'
+				status: 'received',
+				isRead: true
 			},
 			{
-				date: '10/01/2020 15:50:00',
+				date: '18/03/21 18:26',
 				text: 'Plauso all\'affidabilità',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
 			}
 		],
 	},
@@ -168,14 +203,16 @@ var app = new Vue ({
 		visible: true,
 		messages: [
 			{
-				date: '10/01/2020 15:30:55',
+				date: '02/03/21 09:18',
 				text: 'Ma che nome è Amilcare',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
 			},
 			{
-				date: '10/01/2020 15:50:00',
+				date: '02/03/21 11:57',
 				text: 'Ma chi sei tu? o.O',
-				status: 'received'
+				status: 'received',
+				isRead: true
 			}
 		],
 	},
@@ -185,14 +222,28 @@ var app = new Vue ({
 		visible: true,
 		messages: [
 			{
-				date: '10/01/2020 15:30:55',
+				date: '10/10/21 17:28',
 				text: 'Woooody',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
 			},
 			{
-				date: '10/01/2020 15:50:00',
+				date: '10/10/21 18:04',
 				text: 'Dimmi tutto fratello!',
-				status: 'received'
+				status: 'received',
+				isRead: true
+			},
+			{
+				date: '10/10/21 18:13',
+				text: 'Niente, te la fai una partita?',
+				status: 'sent',
+				isRead: true
+			},
+			{
+				date: '10/10/21 18:19',
+				text: 'Claro!',
+				status: 'received',
+				isRead: true
 			}
 		],
 	},
@@ -202,14 +253,23 @@ var app = new Vue ({
 		visible: true,
 		messages: [
 			{
-				date: '10/01/2020 15:30:55',
+				date: '09/06/96 11:50',
 				text: 'E così sei tu il creatore di questa app',
-				status: 'sent'
+				status: 'sent',
+				isRead: true
 			},
 			{
-				date: '10/01/2020 15:50:00',
+				date: '09/06/96 12:00',
 				text: 'Esattamente',
-				status: 'received'
+				status: 'received',
+				isRead: true
+			}
+			,
+			{
+				date: '09/06/96 12:00',
+				text: 'Messaggio lunghissimo di prova, superiore ai 30 caratteri così da attivare la funzione .substring()',
+				status: 'sent',
+				isRead: true
 			}
 		],
 	},
@@ -327,6 +387,30 @@ var app = new Vue ({
 				return lastMessage;
 			}
 			}			
+		},
+
+		messageSent(index) {
+			let messagesArray = this.contacts[index].messages;
+			let sentStatus = messagesArray[messagesArray.length - 1].status;
+			if (sentStatus == 'sent') {
+				return '<i class="fas fa-check-double"></i>';
+			}
+		},
+
+		//getLastDate si occupa di stampare la data dell'ultimo messaggio
+		getLastDate(index) {
+			let messagesArray = this.contacts[index].messages;
+			let emptyDate ='';
+
+			// Se non ci sono date disponibili, allora non viene stampato nulla
+			if (messagesArray.length == 0) {
+				return emptyDate;
+			// Altrimenti viene stampata l'ultima data
+			} else {
+				let lastDate = messagesArray[messagesArray.length - 1].date;
+
+				return lastDate;
+			}
 		}
 		
     },

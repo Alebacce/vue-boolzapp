@@ -14,32 +14,38 @@ ul {
     list-style-type: none;
 }
 
+
 /* COMMON */
 body {
     min-width: 950px;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
 
 .wrapper {
     height: 100vh;
     width: 100%;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #009587;
     background: linear-gradient(180deg, rgba(0,149,135,1) 20%, rgba(213,218,216,1) 20%);
+}
+
+i {
+    color: #919191;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 /* Le regole per il focus degli input della pagina, sono in fondo 
 (dentro FOOTER) per non farli sovrascrivere durante la lettura a cascata. */
 
+
 /* APP */
 .app-container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 90%;
-    min-width: 80%;
+    height: 95%;
+    min-width: 85%;
 
     display: flex;
 }
@@ -76,35 +82,48 @@ non si modifichino quando si rimpicciolisce la finestra del browser */
     align-items: center;
 }
 
-.contact-box {
+.contact-img-box {
     min-width: 45px;
     max-width: 45px;
 }
 
-.contact-box img {
+.contact-img-box img {
     border-radius: 50%;
     cursor: pointer;
 }
 
 .contact-name {
-    margin-left: 10px;
-    font-weight: 500;
+    margin-left: 15px;
+    font-weight: 400;
+    font-size: 17px;
+}
+.upper-app-icons .icon-box {
+    padding: 0 15px;
 }
 
-.triad-app-icons {
-    width:  90px;
+.upper-app-icons {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-right: 15px;
 }
 
-.icon-box i {
-    color: #b1b1b1;
-    font-size: 20px;
-    cursor: pointer;
+#online-status {
+    position: relative;
+}
+
+#active-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2ED678;
+    border-radius: 50%;
+    
+    position: absolute;
+    left: 60%;
+    bottom: 69%;
 }
 /* END UPPER CONTACT BAR */
+
 
 /* TOOLS AND CONTACT */
 /* Notification options */
@@ -116,6 +135,7 @@ non si modifichino quando si rimpicciolisce la finestra del browser */
     padding: 15px;
     background-color: #8edafb;
 }
+
 .notification-icon {
     width: 45px;
     height: 45px;
@@ -129,6 +149,7 @@ non si modifichino quando si rimpicciolisce la finestra del browser */
 .notification-icon i {
     font-size: 18px;
     color: #8edafb;
+    cursor: unset;
 }
 
 .notification-switch {
@@ -157,7 +178,7 @@ non si modifichino quando si rimpicciolisce la finestra del browser */
     padding-top: 7px;
     padding-bottom: 7px;
     padding-left: 70px;
-    border-radius: 5px;
+    border-radius: 999px;
     border-width: 1px;
     border-color: white;
     border-style: solid;
@@ -173,7 +194,8 @@ non si modifichino quando si rimpicciolisce la finestra del browser */
 }
 
 .searchbar-icon i {
-    color: #b1b1b1;
+    font-size: 15px;
+    cursor: unset;
 }
 
 /* Contact List */
@@ -187,7 +209,7 @@ meglio e più mantenibile */
 }
 
 .contact-list .contact-info {
-    padding: 15px;
+    padding: 13px;
     border-bottom: 1px solid #eaeaea;
     cursor: pointer;
 }
@@ -205,23 +227,39 @@ meglio e più mantenibile */
     padding-bottom: 25px;
 }
 
-.contact-list .contact-box {
+.contact-list .contact-img-box {
     width: 60px;
 }
-.contact-name-last-message {
+
+.contact-preview {
     margin-left: 20px;
-    align-self: center
+    align-self: center;
+    width: 100%;
+}
+
+.contact-name-last-access {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 /* Resetto il margin-left che ha .contact-name */
-.contact-list .contact-name {
+.contact-preview .contact-name {
     margin-left: 0;
 }
 
-.contact-recap {
-    margin-top: 7px;
+.contact-date {
+    font-size: 12px;
+    color: #6a7376;
 }
 
+.chat-preview {
+    margin-top: 7px;
+    font-size: 13px;
+    color: #6a7376;
+}
+
+/* RIGHT */
 /* CHAT */
 .right {
     display: flex;
@@ -238,6 +276,15 @@ meglio e più mantenibile */
 .right .contact-name {
     margin-left: 0;
     margin-bottom: 2px;
+}
+
+#call {
+    border-right: 1px solid #6a7376;
+    padding-right: 30px;
+}
+
+#upper-search {
+    padding-left: 30px;
 }
 
 /* Main: Chat Section */
@@ -267,8 +314,9 @@ main {
     padding-right: 13px;
     padding-bottom: 5px;
 
-    border-radius: 10px;
-    margin-bottom: 15px;
+    border-radius: 13px;
+    margin-bottom: 12px;
+    box-shadow: 0px 1px 5px #bbbbbb;
 
     font-weight: 400;
 }
@@ -288,7 +336,7 @@ o meno il suo baloon in base a quanto testo c'è.
 word-wrap: break-word; serve per far mandare a capo il testo 
 quando non ci sta più, quando va oltre la sua max-width */
 .message-text {
-    min-width: 150px;
+    min-width: 80px;
     max-width: 400px;
     word-wrap: break-word;
 }
@@ -299,25 +347,37 @@ quando non ci sta più, quando va oltre la sua max-width */
     color: #b1b1b1;
     margin-top: 3px;
 }
+
+.message-check i {
+    font-size: 10px;
+}
+
+.message-check.message-read i{
+    color: #4FC3F7;
+}
+
 /* End Main: Chat Section */
 
 /* Footer: Send Message */
 .send-message-container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
     flex-shrink: 0;
 
     background-color: #eaeaea;
     padding: 10px;
 }
 
+#emoji {
+    padding-right: 0;
+}
+
 input {
-    width: 83%;
+    flex-grow: 1;
     padding: 12.5px;
     padding-right: 0;
 
-    border-radius: 5px;
+    border-radius: 999px;
     border-width: 1px;
     border-color: white;
     border-style: solid;
@@ -328,12 +388,16 @@ per non farli sovrascrivere durante la lettura a cascata */
 input:focus {
     outline: none;
     border: 2px solid #009587;
-    border-radius: 10px;
+    border-radius: 999px;
 }
 
-.send-message-icon i {
-    font-size: 20px;
-    color: #6a7376;
-    cursor: pointer;
+.send-message-icon {
+    padding: 0 20px;
 }
 /* End Footer: Send Message */
+
+/* --------  DISCLAIMER ----------- */
+/* Mi sono preso alcune libertà stilistiche attingendo dal vero WhatsApp Web,
+in modo da rendere il tutto il più simile possibile all'originale.
+Il funzionamento non è in alcun mnodo intaccato, ciò che cambia è solo 
+l'aspetto grafico della pafgina in alcuni dettagli */
