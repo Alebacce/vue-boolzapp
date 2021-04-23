@@ -278,6 +278,10 @@ meglio e più mantenibile */
     margin-bottom: 2px;
 }
 
+.right .small-text {
+    color: #5F5F5F;
+}
+
 #call {
     border-right: 1px solid #6a7376;
     padding-right: 30px;
@@ -300,18 +304,18 @@ main {
     margin: 0 auto;
 }
 
-.chat-day-container {
-    margin-top: 10px;
-    text-align: center;
-}
-
 .chat-day {
     margin: 0 auto;
-    min-width: 50px;
-    max-width: max-content;
-    padding: 8px;
+    margin-top: 10px;
+    width: max-content;
+    padding: 9px 12px;
+
     border-radius: 7px;
     box-shadow: 0px 1px 5px #bbbbbb;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
     color: #454943;
     background-color: #E1F3FB;
 }
@@ -334,7 +338,9 @@ main {
     margin-bottom: 12px;
     box-shadow: 0px 1px 5px #bbbbbb;
 
+    font-size: 13px;
     font-weight: 400;
+    line-height: 19px;
     color: #303030;
 }
 
@@ -353,17 +359,39 @@ o meno il suo baloon in base a quanto testo c'è.
 word-wrap: break-word; serve per far mandare a capo il testo 
 quando non ci sta più, quando va oltre la sua max-width */
 .message-text {
-    min-width: 80px;
+    min-width: 40px;
     max-width: 400px;
     word-wrap: break-word;
+    position: relative;
+}
+
+.message-options {
+    width: 5px;
+    height: 5px;
+    opacity: 0;
+}
+
+.message-options i {
+    font-size: 15px;
+    color: #C1C1C1;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.message-options:hover {
+    opacity: 1;
 }
 
 .message-date {
     font-size: 10px;
-    text-align: right;
     color: #b1b1b1;
     margin-top: 3px;
     margin-left: 15px;
+}
+
+.message-options:hover + .message-date {
+    visibility: hidden;
 }
 
 .message-check i {

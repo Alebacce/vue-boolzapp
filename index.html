@@ -152,7 +152,7 @@
                             <div class="contact-name">
                                 {{ contacts[selectedContactIndex].name }}
                             </div>
-                            <div class=" small-text">
+                            <div class="small-text">
                                 Ultimo accesso oggi alle {{ lastAccess }}
                             </div>
                         </div>
@@ -186,11 +186,10 @@
                 <!-- Main: Chat Section -->
                 <main>
                     <div class="main-container">
-                        <div class="chat-day-container">
                             <div class="chat-day">
                                 {{ contacts[selectedContactIndex].messages[contacts[selectedContactIndex].messages.length -1].day }}
                             </div>
-                        </div>
+
                         <ul class="messages-ul">
                             <!-- Sto iterando messages, index si riferisce all'index del messaggio. Per far capire
                             a quale contacts ci stiamo riferendo dobbiamo invece specificarlo noi con un altra variabile.
@@ -202,6 +201,9 @@
                             :class="message.status">
                                 <div class="message-text">
                                     {{ message.text }}
+                                    <span @click="messageOptions()" class="message-options">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
                                     <span class="message-date">
                                         {{ message.hour }}
                                     </span>

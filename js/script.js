@@ -37,7 +37,9 @@ var app = new Vue ({
         userMessage: '',
         userSearch: '',
 		lastMessage: '',
+		today: dayjs().format('DD/MM/YY'),
         lastAccess: dayjs().format('HH:mm'),
+		completeDate: dayjs().format('DD/MM/YY HH:mm'),
 
         contacts: [
 	{
@@ -350,6 +352,9 @@ var app = new Vue ({
 		// sendMessage() si occupa di inviare messaggi solo alla chat al momento
         // attiva. 
 		sendMessage() {
+
+			//------------QUELLO CHE NON DEVO FARE!!!--------------
+
             // this.contacts.forEach((element, index) => {
                 // element.messages.push(
                 //     // Dentro il singolo elemento pusho il nuovo messaggio inviato
@@ -370,6 +375,8 @@ var app = new Vue ({
                 //         )}, 1000);
             // });
 
+			//---------------------------------------------------
+
 
 			// Sempre sfruttando selectedContactIndex si accede alla chat attiva
 			// in quel momento e ci si pusha un nuovo oggetto con tutte le chiavi e i valori
@@ -377,10 +384,13 @@ var app = new Vue ({
 			// Pusho qui nei messaggi ma solo del contatto attivo
             this.contacts[this.selectedContactIndex].messages.push(
                 {
-                    date: dayjs().format('HH:mm'),
+                    date: this.completeDate,
+					day: this.today,
+					hour: this.lastAccess,
                     text: this.userMessage,
-                    status: 'sent'
-                },
+                    status: 'sent',
+					isRead: true                
+				}
             );
 
 			// Inoltre con un setTimeout() si pusha all'interno della stessa chat una risposta 
@@ -389,9 +399,12 @@ var app = new Vue ({
             setTimeout ( () => {
                 this.contacts[this.selectedContactIndex].messages.push(
                 {
-                    date: dayjs().format('HH:mm'),
+                    date: this.completeDate,
+					day: this.today,
+					hour: this.lastAccess,
                     text: 'Bellissimo messaggio!',
-                    status: 'received'
+                    status: 'received',
+					isRead: true
                 }
             )}, 1000)
         },
@@ -469,6 +482,12 @@ var app = new Vue ({
 
 				return lastDate;
 			}
+		},
+
+		// messageOptions attiva le funzionalità della chevron, permettendo di
+		// accedere alle opzioni del messaggio
+		messageOptions() {
+			
 		}
 		
     },
