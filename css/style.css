@@ -188,6 +188,7 @@ meglio e più mantenibile */
 .contact-list .contact-info {
     padding: 15px;
     border-bottom: 1px solid #eaeaea;
+    cursor: pointer;
 }
 
 .contact-list .contact-info:hover {
