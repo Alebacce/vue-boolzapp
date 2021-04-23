@@ -94,7 +94,7 @@
                         <!-- Single Contact Info -->
                         <li 
                         v-for="(contact, index) in contacts" 
-                        @click="showChat(index)" 
+                        @click="showChat(index)"
                         class="contact-info"
                         :class="{'active': selectedContactIndex == index}"
                         v-if="contact.visible">
@@ -103,9 +103,14 @@
                                     :src="'img/avatar' + contacts[index].avatar + '.jpg'" 
                                     :alt="contact.name">
                                 </div>
-                                <span class="contact-name">
-                                    {{ contacts[index].name }}
-                                </span>
+                                <div class="contact-name-last-message">
+                                    <div class="contact-name">
+                                        {{ contacts[index].name }}
+                                    </div>
+                                    <div class="contact-recap">
+                                        {{ lastMessage }}
+                                    </div>
+                                </div>
                         </li>
                         <!-- End Single Contact Info -->
 

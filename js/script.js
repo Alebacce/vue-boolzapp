@@ -36,6 +36,7 @@ var app = new Vue ({
         selectedContactIndex : 0,
         userMessage: '',
         userSearch: '',
+		lastMessage: '',
         lastAccess: dayjs().format('HH:mm'),
 
         contacts: [
@@ -265,7 +266,7 @@ var app = new Vue ({
                     status: 'sent'
                 },
             );
-			
+
 			// Inoltre con un setTimeout() si pusha all'interno della stessa chat una risposta 
 			//automatica che arriva dopo solo un secondo. 
 			//Molto impegnatii contatti eh?
@@ -299,7 +300,20 @@ var app = new Vue ({
                     element.visible = false;
                 }
             });
-        }
-    }
+        },
+
+    },
+
+	created() {
+
+		printLastMessage( () => {
+			this.contacts[index].forEach((element) => {
+				this.lastMessage = element.messages.text;
+				console.log(this.lastMessage);
+
+				return this.lastMessage
+			});
+		});
+	}
 
 });

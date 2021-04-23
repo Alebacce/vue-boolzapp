@@ -206,10 +206,18 @@ meglio e più mantenibile */
 .contact-list .contact-box {
     width: 60px;
 }
-
-.contact-list .contact-name {
+.contact-name-last-message {
     margin-left: 20px;
-    align-self: flex-start;
+    align-self: center
+}
+
+/* Resetto il margin-left che ha .contact-name */
+.contact-list .contact-name {
+    margin-left: 0;
+}
+
+.contact-recap {
+    margin-top: 7px;
 }
 
 /* CHAT */
