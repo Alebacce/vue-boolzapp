@@ -47,24 +47,28 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '25/03/21 14:13',
+				hour: '14:13',
 				text: 'Hai portato a spasso il cane?',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '25/03/21 14:50',
+				hour: '14:50',
 				text: 'Ricordati di dargli da mangiare',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '25/03/21 16:15',
+				hour: '16:15',
 				text: 'Tutto fatto!',
 				status: 'received',
 				isRead: true
 			},
 			{
 				date: '25/03/21 16:27',
+				hour: '16:27',
 				text: 'Grandissimo!',
 				status: 'sent',
 				isRead: true
@@ -78,24 +82,28 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '20/03/21 16:28',
+				hour: '16:28',
 				text: 'Ciao come stai?',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '20/03/21 16:31',
+				hour: '16:31',
 				text: 'Bene grazie! Stasera ci vediamo?',
 				status: 'received',
 				isRead: true
 			},
 			{
 				date: '20/03/21 16:35',
+				hour: '16:35',
 				text: 'Mi piacerebbe ma devo andare a fare la spesa.',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '20/03/21 16:37',
+				hour: '16:37',
 				text: 'Mi dispiace Fabio...',
 				status: 'sent',
 				isRead: false
@@ -109,18 +117,21 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '19/03/21 10:12',
+				hour: '10:12',
 				text: 'La Marianna va in campagna',
 				status: 'received',
 				isRead: true
 			},
 			{
 				date: '19/03/21 10:20',
+				hour: '10:20',
 				text: 'Sicuro di non aver sbagliato chat?',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '19/03/21 16:17',
+				hour: '16:17',
 				text: 'Ah scusa!',
 				status: 'received',
 				isRead: true
@@ -134,12 +145,14 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '19/03/21 15:34',
+				hour: '15:34',
 				text: 'Lo sai che ha aperto una nuova pizzeria?',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '19/03/21 15:53',
+				hour: '15:53',
 				text: 'Si, ma preferirei andare al cinema',
 				status: 'received',
 				isRead: true
@@ -147,6 +160,7 @@ var app = new Vue ({
 			,
 			{
 				date: '19/03/21 16:22',
+				hour: '16:22',
 				text: 'Ma Lu c\'è la pandemia...',
 				status: 'sent',
 				isRead: true
@@ -160,12 +174,14 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '18/03/21 22:44',
+				hour: '22:44',
 				text: 'So Lillo',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '18/03/21 23:06',
+				hour: '23:06',
 				text: 'Noooooooooooo',
 				status: 'received',
 				isRead: true
@@ -179,18 +195,21 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '18/03/21 17:14',
+				hour: '17:14',
 				text: 'Hai comprato le medicine',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '18/03/21 17:45',
+				hour: '17:45',
 				text: 'Tutte quante',
 				status: 'received',
 				isRead: true
 			},
 			{
 				date: '18/03/21 18:26',
+				hour: '18:26',
 				text: 'Plauso all\'affidabilità',
 				status: 'sent',
 				isRead: true
@@ -204,12 +223,14 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '02/03/21 09:18',
+				hour: '09:18',
 				text: 'Ma che nome è Amilcare',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '02/03/21 11:57',
+				hour: '11:57',
 				text: 'Ma chi sei tu? o.O',
 				status: 'received',
 				isRead: true
@@ -223,24 +244,28 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '10/10/21 17:28',
+				hour: '17:28',
 				text: 'Woooody',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '10/10/21 18:04',
+				hour: '18:04',
 				text: 'Dimmi tutto fratello!',
 				status: 'received',
 				isRead: true
 			},
 			{
 				date: '10/10/21 18:13',
+				hour: '18:13',
 				text: 'Niente, te la fai una partita?',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '10/10/21 18:19',
+				hour: '18:19',
 				text: 'Claro!',
 				status: 'received',
 				isRead: true
@@ -254,19 +279,22 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '09/06/96 11:50',
+				hour: '11:50',
 				text: 'E così sei tu il creatore di questa app',
 				status: 'sent',
 				isRead: true
 			},
 			{
 				date: '09/06/96 12:00',
+				hour: '16:27',
 				text: 'Esattamente',
 				status: 'received',
 				isRead: true
 			}
 			,
 			{
-				date: '09/06/96 12:00',
+				date: '09/06/96 12:17',
+				hour: '12:17',
 				text: 'Messaggio lunghissimo di prova, superiore ai 30 caratteri così da attivare la funzione .substring()',
 				status: 'sent',
 				isRead: true
@@ -389,6 +417,8 @@ var app = new Vue ({
 			}			
 		},
 
+		// messageSent fa comparire la spunta di lettura quando il messaggio ha
+		// come status sent, ossia inviato
 		messageSent(index) {
 			let messagesArray = this.contacts[index].messages;
 			let sentStatus = messagesArray[messagesArray.length - 1].status;

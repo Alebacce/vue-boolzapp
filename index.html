@@ -113,9 +113,9 @@
                                             {{ contacts[index].name }}
                                         </div>
                                         <!-- Contact last message -->
-                                        <div class="contact-date">
+                                        <span class="contact-date">
                                             {{ getLastDate(index) }}
-                                        </div>
+                                        </span>
                                     </div>
 
                                     <div class="chat-preview">
@@ -197,9 +197,9 @@
                             :class="message.status">
                                 <div class="message-text">
                                     {{ message.text }}
-                                </div>
-                                <div class="message-date">
-                                    {{ message.date }}
+                                    <span class="message-date">
+                                        {{ message.hour }}
+                                    </span>
                                 </div>
                             </li>
                         </ul>
