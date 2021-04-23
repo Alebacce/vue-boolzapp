@@ -1,4 +1,4 @@
-// Milestone 1
+// MILESTONE 1
 // Replica della grafica con la possibilità di avere messaggi 
 // scritti dall’utente (verdi) e dall’interlocutore (bianco) 
 // assegnando due classi CSS diverse
@@ -6,15 +6,38 @@
 // tramite la direttiva v-for, visualizzare nome e 
 // immagine di ogni contatto
 
-// Milestone 2
+// MILESTONE 2
 // Visualizzazione dinamica dei messaggi: tramite la direttiva v-for,
 // visualizzare tutti i messaggi relativi al contatto attivo 
 // all’interno del pannello della conversazione
 // Click sul contatto mostra la conversazione del contatto cliccato
+
+// MILESTONE 3
+// Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa 
+// e digitando “enter” il testo viene aggiunto al thread sopra, 
+// come messaggio verde.
+// Risposta dall’interlocutore: ad ogni inserimento di un messaggio, 
+// l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+
+// MILESTONE 4
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono 
+// visualizzati solo i contatti il cui nome contiene le lettere inserite 
+// (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
+// MILESTONE 5 - opzionale
+// Cancella messaggio: cliccando sul messaggio appare un menu a tendina che 
+// permette di cancellare il messaggio selezionato
+// Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 
+
+
 var app = new Vue ({
     el: '#root',
     data: {
         selectedContactIndex : 0,
+        userMessage: '',
+        userSearch: '',
+        lastAccess: dayjs().format('HH:mm'),
+
         contacts: [
 	{
 		name: 'Michele',
@@ -99,6 +122,96 @@ var app = new Vue ({
 			}
 		],
 	},
+	{
+		name: 'Paolo',
+		avatar: '_5',
+		visible: true,
+		messages: [
+			{
+				date: '10/01/2020 15:30:55',
+				text: 'So Lillo',
+				status: 'sent'
+			},
+			{
+				date: '10/01/2020 15:50:00',
+				text: 'Noooooooooooo',
+				status: 'received'
+			}
+		],
+	},
+	{
+		name: 'Miriam',
+		avatar: '_6',
+		visible: true,
+		messages: [
+			{
+				date: '10/01/2020 15:30:55',
+				text: 'Hai comprato le medicine',
+				status: 'sent'
+			},
+			{
+				date: '10/01/2020 15:50:00',
+				text: 'Tutte quante',
+				status: 'received'
+			},
+			{
+				date: '10/01/2020 15:50:00',
+				text: 'Plauso all\'affidabilità',
+				status: 'sent'
+			}
+		],
+	},
+	{
+		name: 'Amilcare',
+		avatar: '_7',
+		visible: true,
+		messages: [
+			{
+				date: '10/01/2020 15:30:55',
+				text: 'Ma che nome è Amilcare',
+				status: 'sent'
+			},
+			{
+				date: '10/01/2020 15:50:00',
+				text: 'Ma chi sei tu? o.O',
+				status: 'received'
+			}
+		],
+	},
+	{
+		name: 'Woody',
+		avatar: '_8',
+		visible: true,
+		messages: [
+			{
+				date: '10/01/2020 15:30:55',
+				text: 'Woooody',
+				status: 'sent'
+			},
+			{
+				date: '10/01/2020 15:50:00',
+				text: 'Dimmi tutto fratello!',
+				status: 'received'
+			}
+		],
+	},
+	{
+		name: 'Alebacce',
+		avatar: '_9',
+		visible: true,
+		messages: [
+			{
+				date: '10/01/2020 15:30:55',
+				text: 'E così sei tu il creatore di questa app',
+				status: 'sent'
+			},
+			{
+				date: '10/01/2020 15:50:00',
+				text: 'Esattamente',
+				status: 'received'
+			}
+		],
+	},
 ]
 
     },
@@ -106,12 +219,70 @@ var app = new Vue ({
     methods: {
         showChat(index) {
             this.selectedContactIndex = index;
-            console.log(this.selectedContactIndex);
         },
         
         sendMessage() {
+            // this.contacts.forEach((element, index) => {
+                // element.messages.push(
+                //     // Dentro il singolo elemento pusho il nuovo messaggio inviato
+                //     {
+                //         date: dayjs().format('HH:mm'),
+                //         text: this.userMessage,
+                //         status: 'sent'
+                //     },
+                // );
+                // Risposta automatica dopo un secondo!
+                // setTimeout ( () => {
+                //     element.messages.push(
+                //         {
+                //             date: dayjs().format('HH:mm'),
+                //             text: 'Bellissimo messaggio!',
+                //             status: 'received'
+                //         },
+                //         )}, 1000);
+            // });
 
+			// Pusho nei messaggi ma solo del contatto attivo
+            this.contacts[this.selectedContactIndex].messages.push(
+                {
+                    date: dayjs().format('HH:mm'),
+                    text: this.userMessage,
+                    status: 'sent'
+                },
+            );
+
+            setTimeout ( () => {
+                this.contacts[this.selectedContactIndex].messages.push(
+                {
+                    date: dayjs().format('HH:mm'),
+                    text: 'Bellissimo messaggio!',
+                    status: 'received'
+                }
+            )}, 1000)
+        },
+
+        filterChat() {
+            this.contacts.forEach((element) => {
+                if(element.name.toLowerCase().includes(this.userSearch.toLowerCase())) {
+                    element.visible = true;
+                } else {
+                    element.visible = false;
+                }
+            });
         }
+
+        // filterToDo() {
+        //     this.todos.forEach((element) => {
+        //         // Se la stringa userSearch è compresa nel testo dell'elemento
+        //         // allora la sua vibility sarà true.
+        //         // Le stringhe vengono passate a .toLoweCase per eliminare il
+        //         // case sensitive della ricerca
+        //         if(element.task.toLowerCase().includes(this.userSearch.toLowerCase())) {
+        //         element.visibility = true;
+        //         } else {
+        //             element.visibility = false;
+        //         }
+        //     });
     }
 
 });

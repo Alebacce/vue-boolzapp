@@ -59,49 +59,58 @@
                 <!-- End Upper Contact Bar -->
 
                 <!-- Tools and contact -->
-                <div class="tools-and-contacts-container">
-                    <!-- Notificazion Options -->
-                    <div class="notification-options">
-                        <div class="notification-icon">
-                            <i class="fas fa-bell-slash"></i>
-                        </div>
-                        <div class="notification-switch">
-                            <div>Ricevi notifiche di nuovi messaggi</div>
-                            <div>
-                                <a class="small-text" href="#">
-                                    Attiva notifiche desktop
-                                </a>
-                            </div>
+                <!-- Notificazion Options -->
+                <div class="notification-options">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div class="notification-switch">
+                        <div>Ricevi notifiche di nuovi messaggi</div>
+                        <div>
+                            <a class="small-text" href="#">
+                                Attiva notifiche desktop
+                            </a>
                         </div>
                     </div>
-
-                    <!-- Searchbar -->
-                    <div class="searchbar-section">
-                        <div class="searchbar-container">
-                            <div class="searchbar-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
-                        </div>
-                    </div>
-
-                    <!-- Contacts -->
-                    <div class="contact-list">
-                        <ul>
-                            <!-- Single Contact Info -->
-                            <li v-for="(contact, index) in contacts" @click="showChat(index)" class="contact-info">
-                                    <div class="contact-box">
-                                        <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="contact.name">
-                                    </div>
-                                    <span class="contact-name">{{ contacts[index].name }}</span>
-                            </li>
-                            <!-- End Single Contact Info -->
-
-                        </ul>
-
-                    </div>
-                    <!-- End Contacts -->
                 </div>
+
+                <!-- Searchbar -->
+                <div class="searchbar-section">
+                    <div class="searchbar-container">
+                        <div class="searchbar-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <input 
+                        v-model="userSearch" 
+                        @keyup="filterChat()" 
+                        type="text" 
+                        placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+
+                <!-- Contacts -->
+                <div class="contact-list">
+                    <ul>
+                        <!-- Single Contact Info -->
+                        <li 
+                        v-for="(contact, index) in contacts" 
+                        @click="showChat(index)" 
+                        class="contact-info"
+                        :class="{'active': selectedContactIndex == index}">
+                                <div class="contact-box">
+                                    <img 
+                                    :src="'img/avatar' + contacts[index].avatar + '.jpg'" 
+                                    :alt="contact.name">
+                                </div>
+                                <span class="contact-name">
+                                    {{ contacts[index].name }}
+                                </span>
+                        </li>
+                        <!-- End Single Contact Info -->
+
+                    </ul>
+                </div>
+                <!-- End Contacts -->
             </div>
             <!-- END LEFT: SIDEBAR -->
             
@@ -113,11 +122,17 @@
                     <!-- Contact Info -->
                     <div class="contact-info">
                         <div class="contact-box">
-                            <img :src="'img/avatar' + contacts[selectedContactIndex].avatar + '.jpg'" :alt="contacts[selectedContactIndex].name">
+                            <img 
+                            :src="'img/avatar' + contacts[selectedContactIndex].avatar + '.jpg'" 
+                            :alt="contacts[selectedContactIndex].name">
                         </div>
                         <div class="contact-name-and-access">
-                            <div class="contact-name">{{ contacts[selectedContactIndex].name }}</div>
-                            <div class=" small-text">Ultimo accesso oggi alle</div>
+                            <div class="contact-name">
+                                {{ contacts[selectedContactIndex].name }}
+                            </div>
+                            <div class=" small-text">
+                                Ultimo accesso oggi alle {{ lastAccess }}
+                            </div>
                         </div>
                     </div>
             
@@ -149,11 +164,14 @@
                             a quale contacts ci stiamo riferendo dobbiamo invece specificarlo noi con un altra variabile.
                             Essendo che quindi sto iterando i messaggi, mi basta postare messagge.text e lui mi creerà un
                             <li> per ogni messaggio. Con la classe interattiva si dedcide se è iviato o ricevuto-->
-                            <li v-for="(message, index) in contacts[selectedContactIndex].messages" class="message" :class="message.status">
-                                <div>
+                            <li
+                            v-for="(message, index) in contacts[selectedContactIndex].messages"
+                            class="message" 
+                            :class="message.status">
+                                <div class="message-text">
                                     {{ message.text }}
                                 </div>
-                                <div class="date">
+                                <div class="message-date">
                                     {{ message.date }}
                                 </div>
                             </li>
@@ -171,7 +189,11 @@
                             <i class="far fa-smile"></i>
                         </div>
                         <!-- Input Send Message -->
-                        <input @keyup.enter="sendMessage" type="text" placeholder="Scrivi un messaggio">
+                        <input 
+                        v-model="userMessage" 
+                        @keyup.enter="sendMessage()" 
+                        type="text" 
+                        placeholder="Scrivi un messaggio">
                         <!-- Icon -->
                         <div class="send-message-icon">
                             <i class="fas fa-microphone"></i>
