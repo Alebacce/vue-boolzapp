@@ -96,7 +96,8 @@
                         v-for="(contact, index) in contacts" 
                         @click="showChat(index)" 
                         class="contact-info"
-                        :class="{'active': selectedContactIndex == index}">
+                        :class="{'active': selectedContactIndex == index}"
+                        v-if="contact.visible">
                                 <div class="contact-box">
                                     <img 
                                     :src="'img/avatar' + contacts[index].avatar + '.jpg'" 

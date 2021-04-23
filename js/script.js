@@ -217,11 +217,22 @@ var app = new Vue ({
     },
 
     methods: {
-        showChat(index) {
+		// showChat() mostra la chat selezionata sfruttando l'index del
+		// contatto cliccato che le viene passato nell'HTML nell <li>
+		// sul quale è applicato il ciclo v-for.
+		showChat(index) {
+			// L'index viene reso uguale a selectedContactIndex, che da valore
+			// iniziale di 0, assumerà ora il valore di ogni index.
+			// Essendo poi che messaggi e informazioni riguardanti l'utente attivo
+			// vengono tutte passate sempre grazie a selectedContactIndex, il gioco
+			// è fatto
             this.selectedContactIndex = index;
         },
         
-        sendMessage() {
+
+		// sendMessage() si occupa di inviare messaggi solo alla chat al momento
+        // attiva. 
+		sendMessage() {
             // this.contacts.forEach((element, index) => {
                 // element.messages.push(
                 //     // Dentro il singolo elemento pusho il nuovo messaggio inviato
@@ -242,7 +253,11 @@ var app = new Vue ({
                 //         )}, 1000);
             // });
 
-			// Pusho nei messaggi ma solo del contatto attivo
+
+			// Sempre sfruttando selectedContactIndex si accede alla chat attiva
+			// in quel momento e ci si pusha un nuovo oggetto con tutte le chiavi e i valori
+			// che deve avere un messaggio. 
+			// Pusho qui nei messaggi ma solo del contatto attivo
             this.contacts[this.selectedContactIndex].messages.push(
                 {
                     date: dayjs().format('HH:mm'),
@@ -250,7 +265,10 @@ var app = new Vue ({
                     status: 'sent'
                 },
             );
-
+			
+			// Inoltre con un setTimeout() si pusha all'interno della stessa chat una risposta 
+			//automatica che arriva dopo solo un secondo. 
+			//Molto impegnatii contatti eh?
             setTimeout ( () => {
                 this.contacts[this.selectedContactIndex].messages.push(
                 {
@@ -261,28 +279,27 @@ var app = new Vue ({
             )}, 1000)
         },
 
+
+		// filterChat() si occupa di filtrare le varie chat, accedendo solo a quella/e
+		// desiderata/a. 
         filterChat() {
             this.contacts.forEach((element) => {
+				// Accedendo all'array dei contatti si passano al vaglio tutti gli
+				// elementi e si verifica che la chiave 'name' di questi corrisponda al valore
+				// inserito dal'utente nella searchbar ripreso con una v-model.
+				// Si sfrutta la funzione .includes() e si annulla ii case sensitive utilizzando
+				// .toLowerCase(). 
                 if(element.name.toLowerCase().includes(this.userSearch.toLowerCase())) {
-                    element.visible = true;
+                    // Se l'elemento è presente allora il valore della sua chiave visible sarà true, 
+					// altrimenti sarà false.
+					// un v-if posto nell'HTML sull'elelemento si occuperà di mostrarlo se visible è true
+					// altrimenti l'elemento non verrà mostrato
+					element.visible = true;
                 } else {
                     element.visible = false;
                 }
             });
         }
-
-        // filterToDo() {
-        //     this.todos.forEach((element) => {
-        //         // Se la stringa userSearch è compresa nel testo dell'elemento
-        //         // allora la sua vibility sarà true.
-        //         // Le stringhe vengono passate a .toLoweCase per eliminare il
-        //         // case sensitive della ricerca
-        //         if(element.task.toLowerCase().includes(this.userSearch.toLowerCase())) {
-        //         element.visibility = true;
-        //         } else {
-        //             element.visibility = false;
-        //         }
-        //     });
     }
 
 });
