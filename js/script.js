@@ -302,18 +302,33 @@ var app = new Vue ({
             });
         },
 
+		// getLastMessage riporta nell'anteprima della chat nella lista dei contatti l'ultimo messaggio
+		// inviato o ricevuto dal contatto
+		getLastMessage(index) {
+			// Verifico se ci siano o meno messaggi nell'array dei messaggi
+			let messagesArray = this.contacts[index].messages;
+			let emptyMessage ='';
+
+			// Se non c'è nessun messaggio allora getLastMessage ritorna una stringa vuota
+			if (messagesArray.length == 0) {
+				return emptyMessage;
+			} else {
+				// Altrimenti ritorna il testo del messaggio
+				let lastMessage = messagesArray[messagesArray.length - 1].text;
+				let lastMessageLength = 30;
+				let lastMessageShort = lastMessage.substring(0, lastMessageLength);
+			// Se la lunghezza del messaggio supera i 30 caratteri, viene riportato spezzato
+			// con l'aggiunta di 3 puntini di sopsensione per far capire che il messaggio non
+			// è intero e c'è ancora altro da leggere
+			if (lastMessage.length > 30) {
+				return lastMessageShort + '...';
+			// Altrimenti viene riportato il messaggio nella sua interezza
+			} else {
+				return lastMessage;
+			}
+			}			
+		}
+		
     },
-
-	created() {
-
-		printLastMessage( () => {
-			this.contacts[index].forEach((element) => {
-				this.lastMessage = element.messages.text;
-				console.log(this.lastMessage);
-
-				return this.lastMessage
-			});
-		});
-	}
 
 });

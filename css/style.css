@@ -77,7 +77,8 @@ non si modifichino quando si rimpicciolisce la finestra del browser */
 }
 
 .contact-box {
-    width: 45px;
+    min-width: 45px;
+    max-width: 45px;
 }
 
 .contact-box img {
