@@ -300,6 +300,22 @@ main {
     margin: 0 auto;
 }
 
+.chat-day-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.chat-day {
+    margin: 0 auto;
+    min-width: 50px;
+    max-width: max-content;
+    padding: 8px;
+    border-radius: 7px;
+    box-shadow: 0px 1px 5px #bbbbbb;
+    color: #454943;
+    background-color: #E1F3FB;
+}
+
 .messages-ul {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -314,11 +330,12 @@ main {
     padding-right: 9px;
     padding-bottom: 8px;
 
-    border-radius: 13px;
+    border-radius: 7px;
     margin-bottom: 12px;
     box-shadow: 0px 1px 5px #bbbbbb;
 
     font-weight: 400;
+    color: #303030;
 }
 
 .message.sent {

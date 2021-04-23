@@ -47,6 +47,7 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '25/03/21 14:13',
+				day: 'ieri',
 				hour: '14:13',
 				text: 'Hai portato a spasso il cane?',
 				status: 'sent',
@@ -54,6 +55,7 @@ var app = new Vue ({
 			},
 			{
 				date: '25/03/21 14:50',
+				day: 'ieri',
 				hour: '14:50',
 				text: 'Ricordati di dargli da mangiare',
 				status: 'sent',
@@ -61,6 +63,7 @@ var app = new Vue ({
 			},
 			{
 				date: '25/03/21 16:15',
+				day: 'ieri',
 				hour: '16:15',
 				text: 'Tutto fatto!',
 				status: 'received',
@@ -68,6 +71,7 @@ var app = new Vue ({
 			},
 			{
 				date: '25/03/21 16:27',
+				day: 'ieri',
 				hour: '16:27',
 				text: 'Grandissimo!',
 				status: 'sent',
@@ -82,6 +86,7 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '20/03/21 16:28',
+				day: 'martedì',
 				hour: '16:28',
 				text: 'Ciao come stai?',
 				status: 'sent',
@@ -89,6 +94,7 @@ var app = new Vue ({
 			},
 			{
 				date: '20/03/21 16:31',
+				day: 'martedì',
 				hour: '16:31',
 				text: 'Bene grazie! Stasera ci vediamo?',
 				status: 'received',
@@ -96,6 +102,7 @@ var app = new Vue ({
 			},
 			{
 				date: '20/03/21 16:35',
+				day: 'martedì',
 				hour: '16:35',
 				text: 'Mi piacerebbe ma devo andare a fare la spesa.',
 				status: 'sent',
@@ -103,6 +110,7 @@ var app = new Vue ({
 			},
 			{
 				date: '20/03/21 16:37',
+				day: 'martedì',
 				hour: '16:37',
 				text: 'Mi dispiace Fabio...',
 				status: 'sent',
@@ -117,6 +125,7 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '19/03/21 10:12',
+				day: 'lunedì',
 				hour: '10:12',
 				text: 'La Marianna va in campagna',
 				status: 'received',
@@ -124,6 +133,7 @@ var app = new Vue ({
 			},
 			{
 				date: '19/03/21 10:20',
+				day: 'lunedì',
 				hour: '10:20',
 				text: 'Sicuro di non aver sbagliato chat?',
 				status: 'sent',
@@ -131,6 +141,7 @@ var app = new Vue ({
 			},
 			{
 				date: '19/03/21 16:17',
+				day: 'lunedì',
 				hour: '16:17',
 				text: 'Ah scusa!',
 				status: 'received',
@@ -145,6 +156,7 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '19/03/21 15:34',
+				day: 'lunedì',
 				hour: '15:34',
 				text: 'Lo sai che ha aperto una nuova pizzeria?',
 				status: 'sent',
@@ -152,6 +164,7 @@ var app = new Vue ({
 			},
 			{
 				date: '19/03/21 15:53',
+				day: 'lunedì',
 				hour: '15:53',
 				text: 'Si, ma preferirei andare al cinema',
 				status: 'received',
@@ -160,6 +173,7 @@ var app = new Vue ({
 			,
 			{
 				date: '19/03/21 16:22',
+				day: 'lunedì',
 				hour: '16:22',
 				text: 'Ma Lu c\'è la pandemia...',
 				status: 'sent',
@@ -174,6 +188,7 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '18/03/21 22:44',
+				day: '18/03/21',
 				hour: '22:44',
 				text: 'So Lillo',
 				status: 'sent',
@@ -181,6 +196,7 @@ var app = new Vue ({
 			},
 			{
 				date: '18/03/21 23:06',
+				day: '18/03/21',
 				hour: '23:06',
 				text: 'Noooooooooooo',
 				status: 'received',
@@ -195,6 +211,7 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '18/03/21 17:14',
+				day: '18/03/21',
 				hour: '17:14',
 				text: 'Hai comprato le medicine',
 				status: 'sent',
@@ -202,6 +219,7 @@ var app = new Vue ({
 			},
 			{
 				date: '18/03/21 17:45',
+				day: '18/03/21',
 				hour: '17:45',
 				text: 'Tutte quante',
 				status: 'received',
@@ -209,6 +227,7 @@ var app = new Vue ({
 			},
 			{
 				date: '18/03/21 18:26',
+				day: '18/03/21',
 				hour: '18:26',
 				text: 'Plauso all\'affidabilità',
 				status: 'sent',
@@ -223,6 +242,7 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '02/03/21 09:18',
+				day: '02/03/21',
 				hour: '09:18',
 				text: 'Ma che nome è Amilcare',
 				status: 'sent',
@@ -230,6 +250,7 @@ var app = new Vue ({
 			},
 			{
 				date: '02/03/21 11:57',
+				day: '02/03/21',
 				hour: '11:57',
 				text: 'Ma chi sei tu? o.O',
 				status: 'received',
@@ -244,6 +265,7 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '10/10/21 17:28',
+				day: '10/10/21',
 				hour: '17:28',
 				text: 'Woooody',
 				status: 'sent',
@@ -251,6 +273,7 @@ var app = new Vue ({
 			},
 			{
 				date: '10/10/21 18:04',
+				day: '10/10/21',
 				hour: '18:04',
 				text: 'Dimmi tutto fratello!',
 				status: 'received',
@@ -258,6 +281,7 @@ var app = new Vue ({
 			},
 			{
 				date: '10/10/21 18:13',
+				day: '10/10/21',
 				hour: '18:13',
 				text: 'Niente, te la fai una partita?',
 				status: 'sent',
@@ -265,6 +289,7 @@ var app = new Vue ({
 			},
 			{
 				date: '10/10/21 18:19',
+				day: '10/10/21',
 				hour: '18:19',
 				text: 'Claro!',
 				status: 'received',
@@ -279,6 +304,7 @@ var app = new Vue ({
 		messages: [
 			{
 				date: '09/06/96 11:50',
+				day: '09/06/96',
 				hour: '11:50',
 				text: 'E così sei tu il creatore di questa app',
 				status: 'sent',
@@ -286,6 +312,7 @@ var app = new Vue ({
 			},
 			{
 				date: '09/06/96 12:00',
+				day: '09/06/96',
 				hour: '16:27',
 				text: 'Esattamente',
 				status: 'received',
@@ -294,6 +321,7 @@ var app = new Vue ({
 			,
 			{
 				date: '09/06/96 12:17',
+				day: '09/06/96',
 				hour: '12:17',
 				text: 'Messaggio lunghissimo di prova, superiore ai 30 caratteri così da attivare la funzione .substring()',
 				status: 'sent',
@@ -437,7 +465,7 @@ var app = new Vue ({
 				return emptyDate;
 			// Altrimenti viene stampata l'ultima data
 			} else {
-				let lastDate = messagesArray[messagesArray.length - 1].date;
+				let lastDate = messagesArray[messagesArray.length - 1].day;
 
 				return lastDate;
 			}

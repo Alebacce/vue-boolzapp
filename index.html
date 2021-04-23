@@ -186,6 +186,11 @@
                 <!-- Main: Chat Section -->
                 <main>
                     <div class="main-container">
+                        <div class="chat-day-container">
+                            <div class="chat-day">
+                                {{ contacts[selectedContactIndex].messages[contacts[selectedContactIndex].messages.length -1].day }}
+                            </div>
+                        </div>
                         <ul class="messages-ul">
                             <!-- Sto iterando messages, index si riferisce all'index del messaggio. Per far capire
                             a quale contacts ci stiamo riferendo dobbiamo invece specificarlo noi con un altra variabile.
