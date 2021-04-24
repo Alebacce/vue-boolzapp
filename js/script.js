@@ -41,304 +41,346 @@ var app = new Vue ({
         lastAccess: dayjs().format('HH:mm'),
 		completeDate: dayjs().format('DD/MM/YY HH:mm'),
 
+		// A contacts.messages sono state aggiunte diverse proprietà utili
+		// allo svolgimento degli extra che avevo in mente e al rendere il
+		// più possibile questa demo simile al WhatsApp
         contacts: [
-	{
-		name: 'Michele',
-		avatar: '_1',
-		visible: true,
-		messages: [
-			{
-				date: '25/03/21 14:13',
-				day: 'ieri',
-				hour: '14:13',
-				text: 'Hai portato a spasso il cane?',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '25/03/21 14:50',
-				day: 'ieri',
-				hour: '14:50',
-				text: 'Ricordati di dargli da mangiare',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '25/03/21 16:15',
-				day: 'ieri',
-				hour: '16:15',
-				text: 'Tutto fatto!',
-				status: 'received',
-				isRead: true
-			},
-			{
-				date: '25/03/21 16:27',
-				day: 'ieri',
-				hour: '16:27',
-				text: 'Grandissimo!',
-				status: 'sent',
-				isRead: true
-			}
-		],
-	},
-	{
-		name: 'Fabio',
-		avatar: '_2',
-		visible: true,
-		messages: [
-			{
-				date: '20/03/21 16:28',
-				day: 'martedì',
-				hour: '16:28',
-				text: 'Ciao come stai?',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '20/03/21 16:31',
-				day: 'martedì',
-				hour: '16:31',
-				text: 'Bene grazie! Stasera ci vediamo?',
-				status: 'received',
-				isRead: true
-			},
-			{
-				date: '20/03/21 16:35',
-				day: 'martedì',
-				hour: '16:35',
-				text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '20/03/21 16:37',
-				day: 'martedì',
-				hour: '16:37',
-				text: 'Mi dispiace Fabio...',
-				status: 'sent',
-				isRead: false
-			}
-		],
-	},
-	{
-		name: 'Samuele',
-		avatar: '_3',
-		visible: true,
-		messages: [
-			{
-				date: '19/03/21 10:12',
-				day: 'lunedì',
-				hour: '10:12',
-				text: 'La Marianna va in campagna',
-				status: 'received',
-				isRead: true
-			},
-			{
-				date: '19/03/21 10:20',
-				day: 'lunedì',
-				hour: '10:20',
-				text: 'Sicuro di non aver sbagliato chat?',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '19/03/21 16:17',
-				day: 'lunedì',
-				hour: '16:17',
-				text: 'Ah scusa!',
-				status: 'received',
-				isRead: true
-			}
-		],
-	},
-	{
-		name: 'Luigi',
-		avatar: '_4',
-		visible: true,
-		messages: [
-			{
-				date: '19/03/21 15:34',
-				day: 'lunedì',
-				hour: '15:34',
-				text: 'Lo sai che ha aperto una nuova pizzeria?',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '19/03/21 15:53',
-				day: 'lunedì',
-				hour: '15:53',
-				text: 'Si, ma preferirei andare al cinema',
-				status: 'received',
-				isRead: true
-			}
-			,
-			{
-				date: '19/03/21 16:22',
-				day: 'lunedì',
-				hour: '16:22',
-				text: 'Ma Lu c\'è la pandemia...',
-				status: 'sent',
-				isRead: true
-			}
-		],
-	},
-	{
-		name: 'Paolo',
-		avatar: '_5',
-		visible: true,
-		messages: [
-			{
-				date: '18/03/21 22:44',
-				day: '18/03/21',
-				hour: '22:44',
-				text: 'So Lillo',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '18/03/21 23:06',
-				day: '18/03/21',
-				hour: '23:06',
-				text: 'Noooooooooooo',
-				status: 'received',
-				isRead: true
-			}
-		],
-	},
-	{
-		name: 'Miriam',
-		avatar: '_6',
-		visible: true,
-		messages: [
-			{
-				date: '18/03/21 17:14',
-				day: '18/03/21',
-				hour: '17:14',
-				text: 'Hai comprato le medicine',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '18/03/21 17:45',
-				day: '18/03/21',
-				hour: '17:45',
-				text: 'Tutte quante',
-				status: 'received',
-				isRead: true
-			},
-			{
-				date: '18/03/21 18:26',
-				day: '18/03/21',
-				hour: '18:26',
-				text: 'Plauso all\'affidabilità',
-				status: 'sent',
-				isRead: true
-			}
-		],
-	},
-	{
-		name: 'Amilcare',
-		avatar: '_7',
-		visible: true,
-		messages: [
-			{
-				date: '02/03/21 09:18',
-				day: '02/03/21',
-				hour: '09:18',
-				text: 'Ma che nome è Amilcare',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '02/03/21 11:57',
-				day: '02/03/21',
-				hour: '11:57',
-				text: 'Ma chi sei tu? o.O',
-				status: 'received',
-				isRead: true
-			}
-		],
-	},
-	{
-		name: 'Woody',
-		avatar: '_8',
-		visible: true,
-		messages: [
-			{
-				date: '10/10/21 17:28',
-				day: '10/10/21',
-				hour: '17:28',
-				text: 'Woooody',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '10/10/21 18:04',
-				day: '10/10/21',
-				hour: '18:04',
-				text: 'Dimmi tutto fratello!',
-				status: 'received',
-				isRead: true
-			},
-			{
-				date: '10/10/21 18:13',
-				day: '10/10/21',
-				hour: '18:13',
-				text: 'Niente, te la fai una partita?',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '10/10/21 18:19',
-				day: '10/10/21',
-				hour: '18:19',
-				text: 'Claro!',
-				status: 'received',
-				isRead: true
-			}
-		],
-	},
-	{
-		name: 'Alebacce',
-		avatar: '_9',
-		visible: true,
-		messages: [
-			{
-				date: '09/06/96 11:50',
-				day: '09/06/96',
-				hour: '11:50',
-				text: 'E così sei tu il creatore di questa app',
-				status: 'sent',
-				isRead: true
-			},
-			{
-				date: '09/06/96 12:00',
-				day: '09/06/96',
-				hour: '16:27',
-				text: 'Esattamente',
-				status: 'received',
-				isRead: true
-			}
-			,
-			{
-				date: '09/06/96 12:17',
-				day: '09/06/96',
-				hour: '12:17',
-				text: 'Messaggio lunghissimo di prova, superiore ai 30 caratteri così da attivare la funzione .substring()',
-				status: 'sent',
-				isRead: true
-			}
-		],
-	},
-]
+		{
+			name: 'Michele',
+			avatar: '_1',
+			visible: true,
+			messages: [
+				{
+					date: '25/03/21 14:13',
+					day: 'ieri',
+					hour: '14:13',
+					text: 'Hai portato a spasso il cane?',
+					status: 'sent',
+					isRead: true,
+					active: false
+
+				},
+				{
+					date: '25/03/21 14:50',
+					day: 'ieri',
+					hour: '14:50',
+					text: 'Ricordati di dargli da mangiare',
+					status: 'sent',
+					isRead: true,
+					active: false
+
+				},
+				{
+					date: '25/03/21 16:15',
+					day: 'ieri',
+					hour: '16:15',
+					text: 'Tutto fatto!',
+					status: 'received',
+					isRead: true,
+					active: false
+
+				},
+				{
+					date: '25/03/21 16:27',
+					day: 'ieri',
+					hour: '16:27',
+					text: 'Grandissimo!',
+					status: 'sent',
+					isRead: true,
+					active: false
+				}
+			],
+		},
+		{
+			name: 'Fabio',
+			avatar: '_2',
+			visible: true,
+			messages: [
+				{
+					date: '20/03/21 16:28',
+					day: 'martedì',
+					hour: '16:28',
+					text: 'Ciao come stai?',
+					status: 'sent',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '20/03/21 16:31',
+					day: 'martedì',
+					hour: '16:31',
+					text: 'Bene grazie! Stasera ci vediamo?',
+					status: 'received',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '20/03/21 16:35',
+					day: 'martedì',
+					hour: '16:35',
+					text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+					status: 'sent',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '20/03/21 16:37',
+					day: 'martedì',
+					hour: '16:37',
+					text: 'Mi dispiace Fabio...',
+					status: 'sent',
+					isRead: false,
+					active: false
+				}
+			],
+		},
+		{
+			name: 'Samuele',
+			avatar: '_3',
+			visible: true,
+			messages: [
+				{
+					date: '19/03/21 10:12',
+					day: 'lunedì',
+					hour: '10:12',
+					text: 'La Marianna va in campagna',
+					status: 'received',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '19/03/21 10:20',
+					day: 'lunedì',
+					hour: '10:20',
+					text: 'Sicuro di non aver sbagliato chat?',
+					status: 'sent',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '19/03/21 16:17',
+					day: 'lunedì',
+					hour: '16:17',
+					text: 'Ah scusa!',
+					status: 'received',
+					isRead: true,
+					active: false
+				}
+			],
+		},
+		{
+			name: 'Luigi',
+			avatar: '_4',
+			visible: true,
+			messages: [
+				{
+					date: '19/03/21 15:34',
+					day: 'lunedì',
+					hour: '15:34',
+					text: 'Lo sai che ha aperto una nuova pizzeria?',
+					status: 'sent',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '19/03/21 15:53',
+					day: 'lunedì',
+					hour: '15:53',
+					text: 'Si, ma preferirei andare al cinema',
+					status: 'received',
+					isRead: true,
+					active: false
+				}
+				,
+				{
+					date: '19/03/21 16:22',
+					day: 'lunedì',
+					hour: '16:22',
+					text: 'Ma Lu c\'è la pandemia...',
+					status: 'sent',
+					isRead: true,
+					active: false
+				}
+			],
+		},
+		{
+			name: 'Paolo',
+			avatar: '_5',
+			visible: true,
+			messages: [
+				{
+					date: '18/03/21 22:44',
+					day: '18/03/21',
+					hour: '22:44',
+					text: 'So Lillo',
+					status: 'sent',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '18/03/21 23:06',
+					day: '18/03/21',
+					hour: '23:06',
+					text: 'Noooooooooooo',
+					status: 'received',
+					isRead: true,
+					active: false
+				}
+			],
+		},
+		{
+			name: 'Sara',
+			avatar: '_6',
+			visible: true,
+			messages: [
+				{
+					date: '18/03/21 17:14',
+					day: '18/03/21',
+					hour: '17:14',
+					text: 'Hai comprato le medicine',
+					status: 'sent',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '18/03/21 17:45',
+					day: '18/03/21',
+					hour: '17:45',
+					text: 'Tutte quante',
+					status: 'received',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '18/03/21 18:26',
+					day: '18/03/21',
+					hour: '18:26',
+					text: 'Plauso all\'affidabilità',
+					status: 'sent',
+					isRead: true,
+					active: false
+				}
+			],
+		},
+		{
+			name: 'Amilcare',
+			avatar: '_7',
+			visible: true,
+			messages: [
+				{
+					date: '02/03/21 09:18',
+					day: '02/03/21',
+					hour: '09:18',
+					text: 'Ma che nome è Amilcare',
+					status: 'sent',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '02/03/21 11:57',
+					day: '02/03/21',
+					hour: '11:57',
+					text: 'Ma chi sei tu? o.O',
+					status: 'received',
+					isRead: true,
+					active: false
+				}
+			],
+		},
+		{
+			name: 'Woody',
+			avatar: '_8',
+			visible: true,
+			messages: [
+				{
+					date: '10/10/21 17:28',
+					day: '10/10/21',
+					hour: '17:28',
+					text: 'Woooody',
+					status: 'sent',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '10/10/21 18:04',
+					day: '10/10/21',
+					hour: '18:04',
+					text: 'Dimmi tutto fratello!',
+					status: 'received',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '10/10/21 18:13',
+					day: '10/10/21',
+					hour: '18:13',
+					text: 'Niente, te la fai una partita?',
+					status: 'sent',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '10/10/21 18:19',
+					day: '10/10/21',
+					hour: '18:19',
+					text: 'Claro!',
+					status: 'received',
+					isRead: true,
+					active: false
+				}
+			],
+		},
+		{
+			name: 'Alebacce',
+			avatar: '_9',
+			visible: true,
+			messages: [
+				{
+					date: '09/06/96 11:50',
+					day: '09/06/96',
+					hour: '11:50',
+					text: 'E così sei tu il creatore di questa app',
+					status: 'sent',
+					isRead: true,
+					active: false
+				},
+				{
+					date: '09/06/96 12:00',
+					day: '09/06/96',
+					hour: '16:27',
+					text: 'Esattamente',
+					status: 'received',
+					isRead: true,
+					active: false
+				}
+				,
+				{
+					date: '09/06/96 12:17',
+					day: '09/06/96',
+					hour: '12:17',
+					text: 'Messaggio lunghissimo di prova, superiore ai 30 caratteri così da attivare la funzione .substring()',
+					status: 'sent',
+					isRead: true,
+					active: false
+				}
+			],
+		}
+	]
 
     },
 
     methods: {
-		// showChat() mostra la chat selezionata sfruttando l'index del
-		// contatto cliccato che le viene passato nell'HTML nell <li>
-		// sul quale è applicato il ciclo v-for.
+		/* --------  DISCLAIMER ----------- 
+		C'è un bel po' di roba external, ma ciò che era richiesto dall'esercizio
+		è stato rispettato
+		------------------------------------*/
+
+
+
+		/* showChat()
+		mostra la chat selezionata sfruttando l'index del
+		contatto cliccato che le viene passato nell'HTML nel <li>
+		sul quale è applicato il ciclo v-for. */
 		showChat(index) {
 			// L'index viene reso uguale a selectedContactIndex, che da valore
 			// iniziale di 0, assumerà ora il valore di ogni index.
@@ -349,12 +391,14 @@ var app = new Vue ({
         },
         
 
-		// sendMessage() si occupa di inviare messaggi solo alla chat al momento
-        // attiva. 
+
+
+		/* sendMessage() 
+		si occupa di inviare messaggi solo alla chat al momento attiva. */ 
 		sendMessage() {
 
 			//------------QUELLO CHE NON DEVO FARE!!!--------------
-
+			//------------ Lo tengo per promemoria-----------------
             // this.contacts.forEach((element, index) => {
                 // element.messages.push(
                 //     // Dentro il singolo elemento pusho il nuovo messaggio inviato
@@ -389,13 +433,17 @@ var app = new Vue ({
 					hour: this.lastAccess,
                     text: this.userMessage,
                     status: 'sent',
-					isRead: true                
+					isRead: true,
+					active: false              
 				}
             );
+			
+			// L'input per inviare messaggi torna vuoto dopo l'invio di un messaggio
+			this.userMessage = '',
 
 			// Inoltre con un setTimeout() si pusha all'interno della stessa chat una risposta 
 			//automatica che arriva dopo solo un secondo. 
-			//Molto impegnatii contatti eh?
+			//Molto impegnati i contatti eh?
             setTimeout ( () => {
                 this.contacts[this.selectedContactIndex].messages.push(
                 {
@@ -404,14 +452,17 @@ var app = new Vue ({
 					hour: this.lastAccess,
                     text: 'Bellissimo messaggio!',
                     status: 'received',
-					isRead: true
+					isRead: true,	
+					active: false
                 }
             )}, 1000)
         },
 
 
-		// filterChat() si occupa di filtrare le varie chat, accedendo solo a quella/e
-		// desiderata/a. 
+
+		/* filterChat() 
+		si occupa di filtrare le varie chat, accedendo solo a quella/e
+		desiderata/a. */  
         filterChat() {
             this.contacts.forEach((element) => {
 				// Accedendo all'array dei contatti si passano al vaglio tutti gli
@@ -422,7 +473,7 @@ var app = new Vue ({
                 if(element.name.toLowerCase().includes(this.userSearch.toLowerCase())) {
                     // Se l'elemento è presente allora il valore della sua chiave visible sarà true, 
 					// altrimenti sarà false.
-					// un v-if posto nell'HTML sull'elelemento si occuperà di mostrarlo se visible è true
+					// Un v-if posto nell'HTML sull'elelemento si occuperà di mostrarlo se visible è true
 					// altrimenti l'elemento non verrà mostrato
 					element.visible = true;
                 } else {
@@ -431,8 +482,11 @@ var app = new Vue ({
             });
         },
 
-		// getLastMessage riporta nell'anteprima della chat nella lista dei contatti l'ultimo messaggio
-		// inviato o ricevuto dal contatto
+
+
+		/* getLastMessage 
+		riporta nell'anteprima della chat nella lista dei contatti l'ultimo messaggio
+		inviato o ricevuto dal contatto */
 		getLastMessage(index) {
 			// Verifico se ci siano o meno messaggi nell'array dei messaggi
 			let messagesArray = this.contacts[index].messages;
@@ -441,25 +495,29 @@ var app = new Vue ({
 			// Se non c'è nessun messaggio allora getLastMessage ritorna una stringa vuota
 			if (messagesArray.length == 0) {
 				return emptyMessage;
+
+			// Altrimenti ritorna il testo del messaggio
 			} else {
-				// Altrimenti ritorna il testo del messaggio
 				let lastMessage = messagesArray[messagesArray.length - 1].text;
 				let lastMessageLength = 30;
 				let lastMessageShort = lastMessage.substring(0, lastMessageLength);
-			// Se la lunghezza del messaggio supera i 30 caratteri, viene riportato spezzato
-			// con l'aggiunta di 3 puntini di sopsensione per far capire che il messaggio non
-			// è intero e c'è ancora altro da leggere
-			if (lastMessage.length > 30) {
-				return lastMessageShort + '...';
-			// Altrimenti viene riportato il messaggio nella sua interezza
-			} else {
-				return lastMessage;
-			}
+				// Se la lunghezza del messaggio supera i 30 caratteri, viene riportato spezzato
+				// con l'aggiunta di 3 puntini di sospensione per far capire che il messaggio non
+				// è intero e c'è ancora altro da leggere
+				if (lastMessage.length > 30) {
+					return lastMessageShort + '...';
+				// Altrimenti viene riportato il messaggio nella sua interezza
+				} else {
+					return lastMessage;
+				}
 			}			
 		},
 
-		// messageSent fa comparire la spunta di lettura quando il messaggio ha
-		// come status sent, ossia inviato
+
+
+		/* messageSent 
+		fa comparire la spunta di lettura quando il messaggio ha
+		come status sent, ossia inviato */
 		messageSent(index) {
 			let messagesArray = this.contacts[index].messages;
 			let sentStatus = messagesArray[messagesArray.length - 1].status;
@@ -468,7 +526,10 @@ var app = new Vue ({
 			}
 		},
 
-		//getLastDate si occupa di stampare la data dell'ultimo messaggio
+
+
+		/* getLastDate 
+		si occupa di stampare la data dell'ultimo messaggio */
 		getLastDate(index) {
 			let messagesArray = this.contacts[index].messages;
 			let emptyDate ='';
@@ -484,10 +545,30 @@ var app = new Vue ({
 			}
 		},
 
-		// messageOptions attiva le funzionalità della chevron, permettendo di
-		// accedere alle opzioni del messaggio
-		messageOptions() {
-			
+
+
+		/* messageOptions 
+		attiva le funzionalità della chevron, permettendo di
+		accedere alle opzioni del messaggio */
+		messageOptions(index) {
+			this.contacts[this.selectedContactIndex].messages[index].active = !this.contacts[this.selectedContactIndex].messages[index].active;
+		},
+
+
+
+		/* infoMessage 
+		da informazioni sul messaggio, comunica lo stato di questo
+		e la sua data completa con un alert all'utente */
+		infoMessage(index) {
+			alert(this.contacts[this.selectedContactIndex].messages[index].status + ' ' + this.contacts[this.selectedContactIndex].messages[index].date)
+		},
+
+
+
+		/* deleteMessage 
+		si occupa di eliminare il messaggio selezionato */
+		deleteMessage(index) {
+			this.contacts[this.selectedContactIndex].messages.splice(index, 1);
 		}
 		
     },
