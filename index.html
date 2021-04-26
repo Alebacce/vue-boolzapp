@@ -216,13 +216,13 @@
                                     <!-- Message Options -->
                                     <span @click="messageOptions(index)"
                                     class="message-options"
-                                    :class="{'active': contacts[selectedContactIndex].messages[index].active}">
+                                    :class="{'active': index === selectedMessageIndex}">
                                         <a href="#">
                                             <i class="fas fa-chevron-down"></i>
                                         </a>
                                         <!-- Message Options Dropdown Menu -->
                                         <transition name="fade">
-                                        <div v-if="contacts[selectedContactIndex].messages[index].active" 
+                                        <div v-if="index === selectedMessageIndex" 
                                         class="dropdown">
                                             <ul>
                                                 <li @click="infoMessage(index)">

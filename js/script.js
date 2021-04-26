@@ -33,12 +33,24 @@
 var app = new Vue ({
     el: '#root',
     data: {
-        selectedContactIndex : 0,
+		// selectedContactIndex è sempre un numero che rappresenta l'indice
+		// del contatto attivo all'interno dell'array dei contatti
+        selectedContactIndex: 0,
+		// selectedMessageIndex può essere falso o un numero
+		// se è falso nessun messaggio è attivo e le sue opzioni
+		// sono nascoste. Se è un numero, il messaggio con quell'indice
+		// avrà visibile le sue opzioni
+		selectedMessageIndex: false,
         userMessage: '',
         userSearch: '',
 		lastMessage: '',
+		// today viene usata per visualizzare l'ultimo accesso del contatto
 		today: dayjs().format('DD/MM/YY'),
-        lastAccess: dayjs().format('HH:mm'),
+        // lastAccess mostra la data di invio del messaggio, mostrata anche
+		// nella lista contatti
+		lastAccess: dayjs().format('HH:mm'),
+		// completeDate salva nel singolo oggetto (contatto) la data e l'ora
+		// completi del messaggio, qualora venisse utile in futuro
 		completeDate: dayjs().format('DD/MM/YY HH:mm'),
 
 		// A contacts.messages sono state aggiunte diverse proprietà utili
@@ -57,7 +69,6 @@ var app = new Vue ({
 					text: 'Hai portato a spasso il cane?',
 					status: 'sent',
 					isRead: true,
-					active: false
 
 				},
 				{
@@ -67,7 +78,6 @@ var app = new Vue ({
 					text: 'Ricordati di dargli da mangiare',
 					status: 'sent',
 					isRead: true,
-					active: false
 
 				},
 				{
@@ -77,7 +87,6 @@ var app = new Vue ({
 					text: 'Tutto fatto!',
 					status: 'received',
 					isRead: true,
-					active: false
 
 				},
 				{
@@ -87,7 +96,6 @@ var app = new Vue ({
 					text: 'Grandissimo!',
 					status: 'sent',
 					isRead: true,
-					active: false
 				}
 			],
 		},
@@ -103,7 +111,6 @@ var app = new Vue ({
 					text: 'Ciao come stai?',
 					status: 'sent',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '20/03/21 16:31',
@@ -112,7 +119,6 @@ var app = new Vue ({
 					text: 'Bene grazie! Stasera ci vediamo?',
 					status: 'received',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '20/03/21 16:35',
@@ -121,7 +127,6 @@ var app = new Vue ({
 					text: 'Mi piacerebbe ma devo andare a fare la spesa.',
 					status: 'sent',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '20/03/21 16:37',
@@ -130,7 +135,6 @@ var app = new Vue ({
 					text: 'Mi dispiace Fabio...',
 					status: 'sent',
 					isRead: false,
-					active: false
 				}
 			],
 		},
@@ -146,7 +150,6 @@ var app = new Vue ({
 					text: 'La Marianna va in campagna',
 					status: 'received',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '19/03/21 10:20',
@@ -155,7 +158,6 @@ var app = new Vue ({
 					text: 'Sicuro di non aver sbagliato chat?',
 					status: 'sent',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '19/03/21 16:17',
@@ -164,7 +166,6 @@ var app = new Vue ({
 					text: 'Ah scusa!',
 					status: 'received',
 					isRead: true,
-					active: false
 				}
 			],
 		},
@@ -180,7 +181,6 @@ var app = new Vue ({
 					text: 'Lo sai che ha aperto una nuova pizzeria?',
 					status: 'sent',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '19/03/21 15:53',
@@ -189,7 +189,6 @@ var app = new Vue ({
 					text: 'Si, ma preferirei andare al cinema',
 					status: 'received',
 					isRead: true,
-					active: false
 				}
 				,
 				{
@@ -199,7 +198,6 @@ var app = new Vue ({
 					text: 'Ma Lu c\'è la pandemia...',
 					status: 'sent',
 					isRead: true,
-					active: false
 				}
 			],
 		},
@@ -215,7 +213,6 @@ var app = new Vue ({
 					text: 'So Lillo',
 					status: 'sent',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '18/03/21 23:06',
@@ -224,7 +221,6 @@ var app = new Vue ({
 					text: 'Noooooooooooo',
 					status: 'received',
 					isRead: true,
-					active: false
 				}
 			],
 		},
@@ -240,7 +236,6 @@ var app = new Vue ({
 					text: 'Hai comprato le medicine',
 					status: 'sent',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '18/03/21 17:45',
@@ -249,7 +244,6 @@ var app = new Vue ({
 					text: 'Tutte quante',
 					status: 'received',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '18/03/21 18:26',
@@ -258,7 +252,6 @@ var app = new Vue ({
 					text: 'Plauso all\'affidabilità',
 					status: 'sent',
 					isRead: true,
-					active: false
 				}
 			],
 		},
@@ -274,7 +267,6 @@ var app = new Vue ({
 					text: 'Ma che nome è Amilcare',
 					status: 'sent',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '02/03/21 11:57',
@@ -283,7 +275,6 @@ var app = new Vue ({
 					text: 'Ma chi sei tu? o.O',
 					status: 'received',
 					isRead: true,
-					active: false
 				}
 			],
 		},
@@ -299,7 +290,6 @@ var app = new Vue ({
 					text: 'Woooody',
 					status: 'sent',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '10/10/21 18:04',
@@ -308,7 +298,6 @@ var app = new Vue ({
 					text: 'Dimmi tutto fratello!',
 					status: 'received',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '10/10/21 18:13',
@@ -317,7 +306,6 @@ var app = new Vue ({
 					text: 'Niente, te la fai una partita?',
 					status: 'sent',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '10/10/21 18:19',
@@ -326,7 +314,6 @@ var app = new Vue ({
 					text: 'Claro!',
 					status: 'received',
 					isRead: true,
-					active: false
 				}
 			],
 		},
@@ -342,7 +329,6 @@ var app = new Vue ({
 					text: 'E così sei tu il creatore di questa app',
 					status: 'sent',
 					isRead: true,
-					active: false
 				},
 				{
 					date: '09/06/96 12:00',
@@ -351,7 +337,6 @@ var app = new Vue ({
 					text: 'Esattamente',
 					status: 'received',
 					isRead: true,
-					active: false
 				}
 				,
 				{
@@ -361,7 +346,6 @@ var app = new Vue ({
 					text: 'Messaggio lunghissimo di prova, superiore ai 30 caratteri così da attivare la funzione .substring()',
 					status: 'sent',
 					isRead: true,
-					active: false
 				}
 			],
 		}
@@ -388,6 +372,7 @@ var app = new Vue ({
 			// vengono tutte passate sempre grazie a selectedContactIndex, il gioco
 			// è fatto
             this.selectedContactIndex = index;
+			this.selectedMessageIndex = false;
         },
         
 
@@ -433,27 +418,33 @@ var app = new Vue ({
 					hour: this.lastAccess,
                     text: this.userMessage,
                     status: 'sent',
-					isRead: true,
-					active: false              
+					isRead: true,          
 				}
             );
 			
 			// L'input per inviare messaggi torna vuoto dopo l'invio di un messaggio
-			this.userMessage = '',
+			this.userMessage = '';
+			
+			// Mi salvo in questa variabile l'utente al quale ho effettivamente mandato
+			// il messaggio (che è il selectedContactIndex di quel momento), che non può 
+			// cambiare come invece cambia selectedContactIndex, rimane per forza quell'utente 
+			// a cui ho mandato il messaggio, per cui cambiando velocemente chat non corro il 
+			// rischio di avere la risposta automatica in un'altra chat, ossia quello che ne 
+			// deriverebbe appunto da selectedContactIndex
+			const sentActiveContact = this.selectedContactIndex;
 
 			// Inoltre con un setTimeout() si pusha all'interno della stessa chat una risposta 
 			//automatica che arriva dopo solo un secondo. 
 			//Molto impegnati i contatti eh?
             setTimeout ( () => {
-                this.contacts[this.selectedContactIndex].messages.push(
+                this.contacts[sentActiveContact].messages.push(
                 {
                     date: this.completeDate,
 					day: this.today,
 					hour: this.lastAccess,
                     text: 'Bellissimo messaggio!',
                     status: 'received',
-					isRead: true,	
-					active: false
+					isRead: true,
                 }
             )}, 1000)
         },
@@ -551,7 +542,13 @@ var app = new Vue ({
 		attiva le funzionalità della chevron, permettendo di
 		accedere alle opzioni del messaggio */
 		messageOptions(index) {
-			this.contacts[this.selectedContactIndex].messages[index].active = !this.contacts[this.selectedContactIndex].messages[index].active;
+			// this.contacts[this.selectedContactIndex].messages[index].active = !this.contacts[this.selectedContactIndex].messages[index].active;
+			// index === this.selectedMessageIndex;
+			if (this.selectedMessageIndex === index) {
+				this.selectedMessageIndex = false;
+			} else {
+				this.selectedMessageIndex = index; 
+			}
 		},
 
 
@@ -568,7 +565,12 @@ var app = new Vue ({
 		/* deleteMessage 
 		si occupa di eliminare il messaggio selezionato */
 		deleteMessage(index) {
+			console.log('prima', this.selectedMessageIndex);
 			this.contacts[this.selectedContactIndex].messages.splice(index, 1);
+			// Resetto selectedMessageIndex per non avere problemi di indici dopo l'eliminazione
+			// di un messaggio
+			this.selectedMessageIndex = false;
+			console.log('dopo', this.selectedMessageIndex);
 		}
 		
     },

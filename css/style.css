@@ -358,6 +358,8 @@ main {
     font-weight: 400;
     line-height: 19px;
     color: #303030;
+
+    position: relative;
 }
 
 .message.sent {
@@ -378,7 +380,6 @@ quando non ci sta più, quando va oltre la sua max-width */
     min-width: 40px;
     max-width: 400px;
     word-wrap: break-word;
-    position: relative;
 }
 
 .message-options {
@@ -389,8 +390,8 @@ quando non ci sta più, quando va oltre la sua max-width */
     font-size: 15px;
     color: #C1C1C1;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 3px;
     padding-bottom: 7px;
     padding-left: 4px;
     padding-right: 4px;
@@ -443,6 +444,9 @@ quando non ci sta più, quando va oltre la sua max-width */
     color: #b1b1b1;
     margin-top: 3px;
     margin-left: 15px;
+    /* position: absolute;
+    bottom: 0;
+    right: 0; */
 }
 
 .message-options:hover + .message-date,
