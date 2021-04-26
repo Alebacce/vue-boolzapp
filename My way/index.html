@@ -10,8 +10,8 @@
     <!-- Google Fonts: Montserrat -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -38,7 +38,7 @@
                         </div>
                         <span class="contact-name">Kassandra</span>
                     </div>
-            
+
                     <!-- Triad of App Icons -->
                     <div class="upper-app-icons">
                         <!-- Icon -->
@@ -46,7 +46,7 @@
                             <i class="fas fa-circle-notch"></i>
                             <div id="active-dot"></div>
                         </div>
-                        
+
                         <!-- Icon -->
                         <div class="icon-box">
                             <i class="fas fa-plus"></i>
@@ -82,11 +82,8 @@
                         <div class="searchbar-icon">
                             <i class="fas fa-search"></i>
                         </div>
-                        <input 
-                        v-model="userSearch" 
-                        @keyup="filterChat()" 
-                        type="text" 
-                        placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="userSearch" @keyup="filterChat()" type="text"
+                            placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
 
@@ -94,44 +91,36 @@
                 <div class="contact-list">
                     <ul>
                         <!-- Single Contact Info -->
-                        <li 
-                        v-for="(contact, index) in contacts" 
-                        @click="showChat(index)"
-                        class="contact-info"
-                        :class="{'active': selectedContactIndex == index}"
-                        v-if="contact.visible">
-                                <!-- Contact Img -->
-                                <div class="contact-img-box">
-                                    <img 
-                                    :src="'img/avatar' + contacts[index].avatar + '.jpg'" 
-                                    :alt="contact.name">
-                                </div>
-                                <!-- Contact Chat Preview -->
-                                <div class="contact-preview-box">
-                                    <div class="contact-name-and-date">
-                                        <!-- Contact Name -->
-                                        <div class="contact-name">
-                                            {{ contacts[index].name }}
-                                        </div>
-                                        <!-- Contact Last Message Date -->
-                                        <span class="contact-date">
-                                            {{ getLastDate(index) }}
-                                        </span>
+                        <li v-for="(contact, index) in contacts" @click="showChat(index)" class="contact-info"
+                            :class="{'active': selectedContactIndex == index}" v-if="contact.visible">
+                            <!-- Contact Img -->
+                            <div class="contact-img-box">
+                                <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" :alt="contact.name">
+                            </div>
+                            <!-- Contact Chat Preview -->
+                            <div class="contact-preview-box">
+                                <div class="contact-name-and-date">
+                                    <!-- Contact Name -->
+                                    <div class="contact-name">
+                                        {{ contacts[index].name }}
                                     </div>
+                                    <!-- Contact Last Message Date -->
+                                    <span class="contact-date">
+                                        {{ getLastDate(index) }}
+                                    </span>
+                                </div>
 
-                                    <!-- Contact Last Message and Message Read Check -->
-                                    <div class="chat-preview">
-                                        <!-- Message Sent Read Check -->
-                                        <span
-                                        v-if="contacts[index].messages.length > 0"
-                                        class="message-check" 
+                                <!-- Contact Last Message and Message Read Check -->
+                                <div class="chat-preview">
+                                    <!-- Message Sent Read Check -->
+                                    <span v-if="contacts[index].messages.length > 0" class="message-check"
                                         v-html="messageSent(index)"
                                         :class="{'message-read': contacts[index].messages[contacts[index].messages.length -1].isRead}">
-                                        </span>
-                                        <!-- Contact Last Message Text -->
-                                        {{ getLastMessage(index) }}
-                                    </div>
+                                    </span>
+                                    <!-- Contact Last Message Text -->
+                                    {{ getLastMessage(index) }}
                                 </div>
+                            </div>
                         </li>
                         <!-- End Single Contact Info -->
                     </ul>
@@ -139,19 +128,18 @@
                 <!-- End Contacts -->
             </div>
             <!-- END LEFT: SIDEBAR -->
-            
-            
+
+
             <!-- RIGHT: CHAT -->
             <div class="right">
-            
+
                 <!-- Upper Contact Bar -->
                 <div class="contact-bar">
                     <!-- Contact Info -->
                     <div class="contact-info">
                         <div class="contact-img-box">
-                            <img 
-                            :src="'img/avatar' + contacts[selectedContactIndex].avatar + '.jpg'" 
-                            :alt="contacts[selectedContactIndex].name">
+                            <img :src="'img/avatar' + contacts[selectedContactIndex].avatar + '.jpg'"
+                                :alt="contacts[selectedContactIndex].name">
                         </div>
                         <div class="contact-name-and-access">
                             <div class="contact-name">
@@ -162,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <!-- Poker of App Icons -->
                     <div class="upper-app-icons">
                         <!-- Icon -->
@@ -179,7 +167,7 @@
                         <div id="upper-search" class="icon-box">
                             <i class="fas fa-search"></i>
                         </div>
-                        
+
                         <!-- Icon -->
                         <div class="icon-box">
                             <i class="fas fa-ellipsis-h"></i>
@@ -193,10 +181,9 @@
                     <div class="main-container">
 
                         <!-- Chat Day -->
-                        <div 
-                        v-if="contacts[selectedContactIndex].messages.length > 0"
-                        class="chat-day">
-                            {{ contacts[selectedContactIndex].messages[contacts[selectedContactIndex].messages.length -1].day }}
+                        <div v-if="contacts[selectedContactIndex].messages.length > 0" class="chat-day">
+                            {{ contacts[selectedContactIndex].messages[contacts[selectedContactIndex].messages.length
+                            -1].day }}
                         </div>
                         <!-- End Chat Day -->
 
@@ -206,33 +193,29 @@
                             a quale contacts ci stiamo riferendo dobbiamo invece specificarlo noi con un altra variabile.
                             Essendo che quindi sto iterando i messaggi, mi basta postare messagge.text e lui mi creerà un
                             <li> per ogni messaggio. Con la classe interattiva si dedcide se è iviato o ricevuto-->
-                            <li
-                            v-for="(message, index) in contacts[selectedContactIndex].messages"
-                            class="message" 
-                            :class="message.status">
-                            <!-- Message Text Ballon-->
+                            <li v-for="(message, index) in contacts[selectedContactIndex].messages" class="message"
+                                :class="message.status">
+                                <!-- Message Text Ballon-->
                                 <div class="message-text">
                                     {{ message.text }}
                                     <!-- Message Options -->
-                                    <span @click="messageOptions(index)"
-                                    class="message-options"
-                                    :class="{'active': index === selectedMessageIndex}">
+                                    <span @click.prevent="messageOptions(index)" class="message-options"
+                                        :class="{'active': index === selectedMessageIndex}">
                                         <a href="#">
                                             <i class="fas fa-chevron-down"></i>
                                         </a>
                                         <!-- Message Options Dropdown Menu -->
                                         <transition name="fade">
-                                        <div v-if="index === selectedMessageIndex" 
-                                        class="dropdown">
-                                            <ul>
-                                                <li @click="infoMessage(index)">
-                                                    Info messaggio
-                                                </li>
-                                                <li @click="deleteMessage(index)">
-                                                    Elimina messaggio
-                                                </li>
-                                            </ul>
-                                        </div>
+                                            <div v-if="index === selectedMessageIndex" class="dropdown">
+                                                <ul>
+                                                    <li @click="infoMessage(index)">
+                                                        Info messaggio
+                                                    </li>
+                                                    <li @click="deleteMessage(index)">
+                                                        Elimina messaggio
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </transition>
                                     </span>
                                     <!-- Message Date -->
@@ -263,11 +246,8 @@
                         </div>
 
                         <!-- Input To Send Message -->
-                        <input 
-                        v-model="userMessage" 
-                        @keyup.enter="sendMessage()" 
-                        type="text" 
-                        placeholder="Scrivi un messaggio">
+                        <input v-model="userMessage" @keyup.enter="sendMessage()" type="text"
+                            placeholder="Scrivi un messaggio">
                         <!-- Icon -->
                         <div class="send-message-icon">
                             <i class="fas fa-microphone"></i>
@@ -276,7 +256,7 @@
                     <!-- End Send Message section -->
                 </footer>
                 <!-- END Footer -->
-                
+
             </div>
             <!-- END RIGHT: CHAT -->
         </div>
