@@ -45,13 +45,13 @@ var app = new Vue ({
         userSearch: '',
 		lastMessage: '',
 		// today viene usata per visualizzare l'ultimo accesso del contatto
-		today: dayjs().format('DD/MM/YY'),
+		today: '',
         // lastAccess mostra la data di invio del messaggio, mostrata anche
 		// nella lista contatti
-		lastAccess: dayjs().format('HH:mm'),
+		lastAccess: '',
 		// completeDate salva nel singolo oggetto (contatto) la data e l'ora
 		// completi del messaggio, qualora venisse utile in futuro
-		completeDate: dayjs().format('DD/MM/YY HH:mm'),
+		completeDate: '',
 
 		// A contacts.messages sono state aggiunte diverse proprietà utili
 		// allo svolgimento degli extra che avevo in mente e al rendere il
@@ -352,6 +352,15 @@ var app = new Vue ({
 	]
 
     },
+
+	created() {
+		// Ridefinisco le variabili in created, in modo da averlòe già pronte prima
+		// del caricamento della pagina HTML, in modo da non sovrascriverlo dopo.
+		// Risparmia operazioni al browser e ne aumenta le prestazioni
+		this.today = dayjs().format('DD/MM/YY');
+		this.lastAccess = dayjs().format('HH:mm');
+		this.completeDate = dayjs().format('DD/MM/YY HH:mm');
+	},
 
     methods: {
 		/* --------  DISCLAIMER ----------- 
